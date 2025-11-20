@@ -1,15 +1,16 @@
 import './global.css'
 import type { Metadata } from 'next'
 import { Navbar } from './components/nav'
-import { Analytics } from '@vercel/analytics/react'
-import { SpeedInsights } from '@vercel/speed-insights/next'
+import { Analytics } from '@vercel/analytics/next'
+import { SpeedInsights } from '@vercel/speed-insights/react'
 import Footer from './components/footer'
 import { baseUrl } from './sitemap'
+import { cx } from './utils/classnames'
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: 'Next.js Portfolio Starter',
+    default: 'Kinomiya Dai | Front/Back end Engineer',
     template: '%s | Next.js Portfolio Starter',
   },
   description: 'This is my portfolio.',
@@ -34,7 +35,7 @@ export const metadata: Metadata = {
   },
 }
 
-const cx = (...classes) => classes.filter(Boolean).join(' ')
+
 
 export default function RootLayout({
   children,
@@ -45,7 +46,7 @@ export default function RootLayout({
     <html
       lang="ja"
       className={cx(
-        'text-pf-text bg-pf-bg dark:text-pf-text dark:bg-pf-bg',
+        'text-pf-text bg-pf-bg dark:text-pf-text dark:bg-pf-bg box-border',
       )}
     >
       <body className="antialiased max-w- lg:mx-auto">

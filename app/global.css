@@ -20,6 +20,7 @@
 @theme inline {
   --color-pf-bg: #F5F5F5;
   --color-pf-text: #3D3D3D;
+  --color-pf-ui-border: #DEDEDE;
 }
 
 
@@ -42,6 +43,22 @@
 html {
   min-width: 360px;
 }
+
+@layer components {
+  .text-underline-animate {
+    @apply transition-all duration-300;
+    background-image: linear-gradient(var(--color-pf-text), var(--color-pf-text));
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-size: 0 1px;
+  }
+
+  .text-underline-animate:hover {
+    background-position: bottom left;
+    background-size: 100% 1px;
+  }
+}
+
 
 .prose .anchor {
   @apply absolute invisible no-underline;
