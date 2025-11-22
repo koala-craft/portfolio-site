@@ -7,6 +7,7 @@
     "gen:icons": "svgr --typescript --memo --filename-case kebab  public/images/svg/ --out-dir app/components/icons/"
   },
   "dependencies": {
+    "@splidejs/react-splide": "^0.7.12",
     "@svgr/cli": "^8.1.0",
     "@tailwindcss/postcss": "4.1.17",
     "@types/node": "20.11.17",
@@ -23,7 +24,6 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^5.5.0",
-    "splide-nextjs": "^2.4.23",
     "sugar-high": "^0.6.1",
     "tailwindcss": "4.1.17",
     "typescript": "5.3.3"

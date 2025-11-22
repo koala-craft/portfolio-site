@@ -108,7 +108,7 @@ export default function Page() {
       </section>
       <section className='py-14 flex flex-col items-center gap-14'>
         <h2 className='text-4xl font-bold mb-16'>Blog</h2>
-        <div>
+        <div className='w-full'>
           <BlogPosts />
         </div>
 

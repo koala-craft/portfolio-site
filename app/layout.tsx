@@ -1,3 +1,4 @@
+import '@splidejs/react-splide/css';
 import './global.css'
 import type { Metadata } from 'next'
 import { Navbar } from './components/nav'

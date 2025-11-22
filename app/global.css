@@ -33,6 +33,8 @@
   --color-pf-text: #3D3D3D;
   --color-pf-bg: #F5F5F5;
   --color-pf-ui-border: #DEDEDE;
+  --color-pf-highlight-bg: FAFDFF;
+  --color-pf-slider-ui: #6e8f00;
   /* dark設定 */
   --color-pf-text-dark: #CACACA;
   --color-pf-bg-dark: #090616;
@@ -94,6 +96,38 @@ html {
     opacity: 0;
   }
 }
+
+/*********************************
+
+@splide/react-splide
+
+*********************************/
+.splide__arrow {
+  width: 3rem;
+  height: 3rem;
+  background: var(--color-pf-slider-ui);
+}
+.splide__arrow > svg {
+  fill: var(--color-pf-bg);
+}
+.splide__track {
+  padding-top: 16px;
+  overflow: visible;
+}
+
+.splide__slide {
+  transition: transform 0.5s ease;
+  &:not(.is-visible) {
+    .slide {
+      pointer-events: none;
+      opacity: .3;
+    }
+  }
+}
+.splide__slide:hover {
+  transform: translateY(-16px)
+}
+
 
 /*********************************
 
