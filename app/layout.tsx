@@ -8,6 +8,8 @@ import Footer from './components/footer'
 import { baseUrl } from './sitemap'
 import { cx } from './utils/classnames'
 import { ThemeProvider } from 'next-themes'
+import { Noto_Sans_JP } from 'next/font/google'
+import clsx from 'clsx';
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
@@ -37,6 +39,13 @@ export const metadata: Metadata = {
   },
 }
 
+const noto = Noto_Sans_JP({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '700', '800', '900'], // 使うウェイトだけ指定
+  preload: true,  // パフォーマンス向上
+  display: 'swap', // 読み込み中は代替フォント表示
+})
+
 
 
 export default function RootLayout({
@@ -53,7 +62,7 @@ export default function RootLayout({
         '[&_ *]:duration-initial',
       )}
     >
-      <body className="antialiased max-w- lg:mx-auto">
+      <body className={clsx("antialiased lg:mx-auto", noto.className)}>
         <ThemeProvider
           defaultTheme="system"
           enableSystem={true}>

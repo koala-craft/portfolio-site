@@ -33,8 +33,8 @@
   --color-pf-text: #3D3D3D;
   --color-pf-bg: #F5F5F5;
   --color-pf-ui-border: #DEDEDE;
-  --color-pf-highlight-bg: FAFDFF;
-  --color-pf-slider-ui: #6e8f00;
+  --color-pf-highlight-bg: #FAFDFF;
+  --color-pf-slider-ui: #DA7E53;
   /* dark設定 */
   --color-pf-text-dark: #CACACA;
   --color-pf-bg-dark: #090616;
@@ -116,18 +116,19 @@ html {
 }
 
 .splide__slide {
-  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, opacity 0.4s ease;
   &:not(.is-visible) {
-    .slide {
       pointer-events: none;
-      opacity: .3;
-    }
+      opacity: 0.3;
   }
 }
 .splide__slide:hover {
   transform: translateY(-16px)
 }
 
+.splide__pagination {
+  display: none;
+}
 
 /*********************************
 

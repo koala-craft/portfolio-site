@@ -11,6 +11,7 @@ import { CpdaLogo } from './components/icons';
 import { UndrawCodeThinking } from './components/icons';
 
 import SkillCard from './components/skillcard'
+import Link from 'next/link';
 
 
 const languages = [
@@ -45,9 +46,6 @@ const certifications = [
   { name: "エンジニア認定データ分析実践", icon: <CpdaLogo />, exp: false },
 ];
 
-
-
-
 export default function Page() {
 
   return (
@@ -60,7 +58,9 @@ export default function Page() {
             <p className='text-2xl mb-8'>Front / Back end Engineer</p>
             <p className='mb-3'>Webアプリの設計と実装に取り組んでいます。<br />UI から API まで、使いやすさと拡張性を意識した開発。<br />チームとのコミュニケーションを大切にし、<br />円滑に協力し合える環境づくりを心がけています。</p>
             <div className='flex gap-6'>
-              <FaGithub className='w-8 h-8 cursor-pointer' />
+              <Link href="https://github.com/Kinomiya-Dai">
+                <FaGithub className='w-8 h-8 cursor-pointer' />
+              </Link>
               <SiZenn className='w-8 h-8 cursor-pointer' />
             </div>
           </div>
@@ -107,9 +107,12 @@ export default function Page() {
         </div>
       </section>
       <section className='py-14 flex flex-col items-center gap-14'>
-        <h2 className='text-4xl font-bold mb-16'>Blog</h2>
+        <h2 className='text-4xl font-bold'>Blog</h2>
         <div className='w-full'>
           <BlogPosts />
+          <div className='flex justify-center w-full pt-6'>
+            <p className='text-2xl font-light border-b cursor-pointer'>View All Blogs</p>
+          </div>
         </div>
 
       </section>
@@ -123,7 +126,7 @@ export default function Page() {
       </section>
       <section className='py-14 flex flex-col items-center gap-14'>
         <div className='w-4xl'>
-          <h2 className='text-center text-4xl font-bold mb-8'>Skill-Stacks</h2>
+          <h2 className='text-center text-4xl font-bold mb-24'>Skill-Stacks</h2>
           <section className='pb-32'>
             <h3 className='flex relative items-center mb-12 text-2xl font-bold pl-4 text-before-line text-after-line'>
               <VscCode className='w-6 h6 mr-2' />
