@@ -35,6 +35,7 @@
   --color-pf-ui-border: #DEDEDE;
   --color-pf-highlight-bg: #FAFDFF;
   --color-pf-slider-ui: #DA7E53;
+  --color-pf-disabled-ui: #4c4c4c;
   /* dark設定 */
   --color-pf-text-dark: #CACACA;
   --color-pf-bg-dark: #232323;
@@ -128,6 +129,22 @@ html {
 
 .splide__pagination {
   display: none;
+}
+
+/*********************************
+
+  @react-paginate
+
+**********************************/
+.react-paginate .disabled a {
+  cursor: auto;
+  border: transparent;
+}
+.react-paginate .disabled a > svg {
+  color: var(--color-pf-disabled-ui);
+}
+.react-paginate .disabled a:hover {
+  background: var(--color-pf-bg);
 }
 
 /*********************************

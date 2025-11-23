@@ -1,14 +1,13 @@
 import { BlogPostsList } from 'app/feature/blog/components/postsList'
 
 export const metadata = {
-  title: 'Blog',
-  description: 'Read my blog.',
+  title: 'ブログ一覧 -木乃宮 ダイ-',
+  description: 'ブログ一覧ページ.',
 }
 
 export default function Page() {
   return (
     <section>
-      <h1 className="font-semibold text-2xl mb-8 tracking-tighter">My Blog</h1>
       <BlogPostsList />
     </section>
   )

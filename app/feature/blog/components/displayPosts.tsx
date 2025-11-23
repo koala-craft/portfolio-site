@@ -66,48 +66,26 @@ const DisplayPosts = ({ allBlogs }: BlogListProps) => {
                 new Date(a.metadata.publishedAt).getTime()
             )
             .map((post) => (
-              <>
-                <SplideSlide key={post.slug}>
-                  <Link
-                    className="flex flex-col space-y-1 mb-4"
-                    href={`/blog/${post.slug}`}
-                  >
-                    <article className="border border-transparent rounded-[5px] overflow-hidden  shadow-xl/30 shadow-pf-text">
-                      <div className="h-40">
-                        <img className="w-full h-full" src="/images/blog/cool_dragon04.png" alt="" />
-                      </div>
-                      <div className="relative h-40 flex flex-col md:flex-row space-x-0 p-8 text-pf-text bg-pf-bg">
-                        <p className="font-bold dark:text-neutral-100 tracking-tight">
-                          {post.metadata.title}
-                        </p>
-                        <p className="absolute bottom-4 right-4 dark:text-neutral-400 tabular-nums">
-                          {post.metadata.publishedAt}
-                        </p>
-                      </div>
-                    </article>
-                  </Link>
-                </SplideSlide>
-                <SplideSlide key={post.slug + "1"}>
-                  <Link
-                    className="flex flex-col space-y-1 mb-4"
-                    href={`/blog/${post.slug}`}
-                  >
-                    <article className="border border-transparent rounded-[5px] overflow-hidden  shadow-xl/30 shadow-pf-text">
-                      <div className="h-40">
-                        <img className="w-full h-full" src="/images/blog/cool_dragon04.png" alt="" />
-                      </div>
-                      <div className="relative h-40 flex flex-col md:flex-row space-x-0 p-8 text-pf-text bg-pf-bg">
-                        <p className="font-extrabold dark:text-neutral-100 tracking-normal">
-                          {post.metadata.title}
-                        </p>
-                        <p className="absolute bottom-4 right-4 dark:text-neutral-400 tabular-nums">
-                          {post.metadata.publishedAt}
-                        </p>
-                      </div>
-                    </article>
-                  </Link>
-                </SplideSlide>
-              </>
+              <SplideSlide key={post.slug}>
+                <Link
+                  className="flex flex-col space-y-1 mb-4"
+                  href={`/blog/${post.slug}`}
+                >
+                  <article className="border border-transparent rounded-[5px] overflow-hidden shadow-xl/30 shadow-pf-text">
+                    <div className="h-40">
+                      <img className="w-full h-full" src="/images/blog/cool_dragon04.png" alt="" />
+                    </div>
+                    <div className="relative h-40 flex flex-col md:flex-row space-x-0 p-8 text-pf-text bg-pf-bg">
+                      <p className="font-bold dark:text-neutral-100 tracking-tight">
+                        {post.metadata.title}
+                      </p>
+                      <p className="absolute bottom-4 right-4 dark:text-neutral-400 tabular-nums">
+                        {post.metadata.publishedAt}
+                      </p>
+                    </div>
+                  </article>
+                </Link>
+              </SplideSlide>
             ))}
         </Splide>
       </div>

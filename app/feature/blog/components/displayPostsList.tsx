@@ -1,18 +1,10 @@
 "use client";
 
 import Link from "next/link"
-
-import dynamic from "next/dynamic";
-
-// ssr: false でサーバーではレンダリングされない
-const Splide = dynamic(() => import("@splidejs/react-splide").then(mod => mod.Splide), {
-  ssr: false,
-});
-
-const SplideSlide = dynamic(
-  () => import("@splidejs/react-splide").then(mod => mod.SplideSlide),
-  { ssr: false }
-);
+import ReactPaginate from 'react-paginate';
+import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 
 type BlogListProps = {
   allBlogs: AllBlogs[]
@@ -32,81 +24,79 @@ type Metadata = {
 }
 
 const DisplayPostsList = ({ allBlogs }: BlogListProps) => {
+  const itemsPerPage = 20
+  const [currentPage, setCurrentPage] = useState(0)
+
+  const handlePageChange = (event: { selected: number }) => {
+    setCurrentPage(event.selected)
+  }
+
+  const start = currentPage * itemsPerPage
+  const currentItems = allBlogs.slice(start, start + itemsPerPage)
   return (
-    <div className="min-w-full flex justify-center overflow-x-hidden overflow-y-visible py-8">
-      <div className="max-w-6xl">
-        <Splide className="list-slide"
-          aria-label="blogs-list"
-          options={{
-            mediaQuery: 'min',
-            gap: "1rem",
-            perPage: 4,
-            type: 'loop',
-            pagination: true, // ドットナビゲーションを表示
-            arrows: true,     // 左右矢印
-            breakpoints: {
-              600: {
-                perPage: 2,
-              },
-              1025: {
-                perPage: 4,
-                gap: 32,
-              }
-            },
-          }}
-        >
-          {allBlogs
-            .sort(
-              (a, b) =>
-                new Date(b.metadata.publishedAt).getTime() -
-                new Date(a.metadata.publishedAt).getTime()
-            )
-            .map((post) => (
-              <>
-                <SplideSlide key={post.slug} >
-                  <Link
-                    className="flex flex-col space-y-1 mb-4"
-                    href={`/blog/${post.slug}`}
-                  >
-                    <article className="border border-transparent rounded-[5px] overflow-hidden  shadow-xl/30 shadow-pf-text">
-                      <div className="h-40">
-                        <img className="w-full h-full" src="/images/blog/cool_dragon04.png" alt="" />
-                      </div>
-                      <div className="relative h-40 flex flex-col md:flex-row space-x-0 p-8 text-pf-text bg-pf-bg">
-                        <p className="font-bold dark:text-neutral-100 tracking-tight">
-                          {post.metadata.title}
-                        </p>
-                        <p className="absolute bottom-4 right-4 dark:text-neutral-400 tabular-nums">
-                          {post.metadata.publishedAt}
-                        </p>
-                      </div>
-                    </article>
-                  </Link>
-                </SplideSlide>
-                <SplideSlide key={post.slug + "1"}>
-                  <Link
-                    className="flex flex-col space-y-1 mb-4"
-                    href={`/blog/${post.slug}`}
-                  >
-                    <article className="border border-transparent rounded-[5px] overflow-hidden  shadow-xl/30 shadow-pf-text">
-                      <div className="h-40">
-                        <img className="w-full h-full" src="/images/blog/cool_dragon04.png" alt="" />
-                      </div>
-                      <div className="relative h-40 flex flex-col md:flex-row space-x-0 p-8 text-pf-text bg-pf-bg">
-                        <p className="font-extrabold dark:text-neutral-100 tracking-normal">
-                          {post.metadata.title}
-                        </p>
-                        <p className="absolute bottom-4 right-4 dark:text-neutral-400 tabular-nums">
-                          {post.metadata.publishedAt}
-                        </p>
-                      </div>
-                    </article>
-                  </Link>
-                </SplideSlide>
-              </>
-            ))}
-        </Splide>
+    <div className="min-w-full flex flex-col items-center justify-center">
+      <h1 className="font-bold text-2xl my-8 tracking-normal">Blog List</h1>
+      <p className="mb-6">技術ブログチックに開発経験のナレッジを蓄積しています。</p>
+      <div className="full">
+        <div className="paginate-link-wrapper">
+          {/* ここに前のページ遷移リンクと、次のページ遷移リンクが入る。 */}
+        </div>
       </div>
+      <div className="w-6xl grid grid-cols-4 gap-8 transition-all duration-500">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentPage} // currentPage が変わると再レンダリングしてアニメーション
+            initial={{ opacity: 0, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 0 }}
+            transition={{ duration: 0.2 }}
+            className="w-6xl grid grid-cols-4 gap-8"
+          >
+            {currentItems
+              .sort(
+                (a, b) =>
+                  new Date(b.metadata.publishedAt).getTime() -
+                  new Date(a.metadata.publishedAt).getTime()
+              )
+              .map((post) => (
+                <Link
+                  className="flex flex-col space-y-1 mb-4"
+                  href={`/blog/${post.slug}`}
+                  key={post.slug}
+                >
+                  <article className="border border-transparent rounded-[5px] overflow-hidden  shadow-xl/30 shadow-pf-text transition-transform hover:-translate-y-4 duration-500">
+                    <div className="h-40">
+                      <img className="w-full h-full" src="/images/blog/cool_dragon04.png" alt="" />
+                    </div>
+                    <div className="relative h-40 flex flex-col md:flex-row space-x-0 p-8 text-pf-text bg-pf-bg">
+                      <p className="font-bold dark:text-neutral-100 tracking-tight">
+                        {post.metadata.title}
+                      </p>
+                      <p className="absolute bottom-4 right-4 dark:text-neutral-400 tabular-nums">
+                        {post.metadata.publishedAt}
+                      </p>
+                    </div>
+                  </article>
+                </Link>
+              ))}
+          </motion.div>
+        </AnimatePresence>
+      </div>
+      <ReactPaginate
+        pageCount={Math.ceil(allBlogs.length / itemsPerPage)}
+        onPageChange={handlePageChange}
+        marginPagesDisplayed={2} //先頭と末尾に表示するページの数。今回は2としたので1,2…今いるページの前後…後ろから2番目, 1番目 のように表示されます。
+        pageRangeDisplayed={5} //上記の「今いるページの前後」の番号をいくつ表示させるかを決めます。
+        containerClassName="flex space-x-3 mt-12 react-paginate" //全体のコンテナスタイル
+        pageClassName="rounded-full" //ボタンのスタイル
+        activeClassName="bg-pf-slider-ui text-white dark:bg-gray-200 dark:text-black"//現在のページボタン
+        pageLinkClassName='w-12 h-12 cursor-pointer flex items-center justify-center' //リンク部のクラス名
+        breakLabel="..."
+        previousLinkClassName='paginate-link-previous w-12 h-12 flex items-center justify-center border border-pf-slider-ui hover:border-pf-slider-ui hover:bg-pf-slider-ui rounded-full cursor-pointer group'  //'<'のリンクのクラス名
+        nextLinkClassName='paginate-link-next w-12 h-12 flex items-center justify-center border border-pf-slider-ui hover:border-pf-slider-ui hover:bg-pf-slider-ui rounded-full cursor-pointer group'//'>'のリンクのクラス名
+        previousLabel={<FaAngleLeft className="w-[19px] h-[19px] text-pf-slider-ui group-hover:text-pf-bg" />}
+        nextLabel={<FaAngleRight className="w-[19px] h-[19px] text-pf-slider-ui group-hover:text-pf-bg" />}
+      />
     </div>
   )
 }
