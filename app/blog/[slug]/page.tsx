@@ -92,11 +92,12 @@ export default async function Blog({ params }) {
           {post.metadata.title}
         </h1>
         <hr className='border-pf-text/40 dark:border-pf-text-dark/40' />
-        <div className="flex justify-between items-center mt-2 mb-8 text-sm">
+        <div className="flex justify-between items-center mt-2 text-sm">
           <p className="text-sm text-neutral-600 dark:text-neutral-400 gap-2 flex items-center">
             <FaRegClock className='' />{formatDate(post.metadata.publishedAt)}
           </p>
         </div>
+        <p className='mt-4 mb-8'>{post.metadata.summary}</p>
         <div className='h-[324px]'>
           <img src={baseUrl + post.metadata.image} alt="" className='w-full h-full object-cover' />
         </div>
