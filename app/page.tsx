@@ -111,18 +111,19 @@ export default function Page() {
         <div className='w-full'>
           <BlogPosts />
           <div className='flex justify-center w-full pt-6'>
-            <p className='text-2xl font-light border-b cursor-pointer'>View All Blogs</p>
+            <Link href="./blog">
+              <p className='text-2xl font-light border-b cursor-pointer'>View All Blogs</p>
+            </Link>
           </div>
         </div>
 
       </section>
-      <section className='py-14 flex flex-col items-center gap-14'>
+      <section className='py-14 flex flex-col items-center gap-14 mb-16'>
         <h2 className='text-4xl font-bold mb-10'>Works</h2>
         <div className='h-[424px] w-[820px] border border-pf-text'></div>
         <div className='flex'>
           <p className='text-2xl font-light border-b cursor-pointer'>View All Works</p>
         </div>
-
       </section>
       <section className='py-14 flex flex-col items-center gap-14'>
         <div className='w-4xl'>
