@@ -5,6 +5,7 @@ import ReactPaginate from 'react-paginate';
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
+import { UndrawBlogReport } from "app/components/icons";
 
 type BlogListProps = {
   allBlogs: AllBlogs[]
@@ -36,7 +37,8 @@ const DisplayPostsList = ({ allBlogs }: BlogListProps) => {
   return (
     <div className="min-w-full flex flex-col items-center justify-center">
       <h1 className="font-bold text-2xl my-8 tracking-normal">Blog List</h1>
-      <p className="mb-6">技術ブログチックに開発経験のナレッジを蓄積しています。</p>
+      <UndrawBlogReport className="w-80 h-80 mb-4" />
+      <p className="mb-14">技術ブログチックに開発経験のナレッジを蓄積しています。</p>
       <div className="full">
         <div className="paginate-link-wrapper">
           {/* ここに前のページ遷移リンクと、次のページ遷移リンクが入る。 */}
