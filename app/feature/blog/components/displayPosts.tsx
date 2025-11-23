@@ -74,7 +74,7 @@ const DisplayPosts = ({ allBlogs }: BlogListProps) => {
                   className="flex flex-col space-y-1 mb-4"
                   href={`/blog/${post.slug}`}
                 >
-                  <article className="border border-transparent rounded-[5px] overflow-hidden shadow-xl/30 shadow-pf-text">
+                  <article className="rounded-[5px] overflow-hidden shadow-xl/30 shadow-pf-text">
                     <div className="h-40">
                       <img className="w-full h-full" src="/images/blog/cool_dragon04.png" alt="" />
                     </div>
