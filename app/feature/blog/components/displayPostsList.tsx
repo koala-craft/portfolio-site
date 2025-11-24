@@ -39,11 +39,6 @@ const DisplayPostsList = ({ allBlogs }: BlogListProps) => {
       <h1 className="font-bold text-2xl my-8 tracking-normal">Blog List</h1>
       <UndrawBlogReport className="w-80 h-80 mb-4" />
       <p className="mb-14">技術ブログチックに開発経験のナレッジを蓄積しています。</p>
-      <div className="full">
-        <div className="paginate-link-wrapper">
-          {/* ここに前のページ遷移リンクと、次のページ遷移リンクが入る。 */}
-        </div>
-      </div>
       <div className="w-6xl grid grid-cols-4 gap-8 transition-all duration-500">
         <AnimatePresence mode="wait">
           <motion.div

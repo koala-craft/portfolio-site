@@ -39,7 +39,9 @@
   --color-pf-works-line: #2F2F2F;
   /* dark設定 */
   --color-pf-text-dark: #CACACA;
-  --color-pf-bg-dark: #232323;
+  --color-pf-bg-dark: #37373f;
+  --color-pf-ui-border-dark: #474747;
+  --color-pf-highlight-bg-dark: #484853;
 }
 
 @layer utilities {
@@ -80,7 +82,7 @@
   }
   .scroll-down-animate::before {
     content: "";
-    @apply absolute top-0 left-0 right-0 m-auto w-5 h-5 border-b border-l border-black;
+    @apply absolute top-0 left-0 right-0 m-auto w-5 h-5 border-l-2 border-b-2 border-pf-text dark:text-pf-text-dark;
     animation: var(--animate-scroll-down);
   }
   .text-underline-animate {
@@ -94,6 +96,9 @@
     background-position: bottom left;
     background-size: 100% 1px;
   }
+  [data-theme="dark"] .text-underline-animate {
+  background-image: linear-gradient(var(--color-pf-text-dark), var(--color-pf-text-dark));
+}
 }
 
 html {
@@ -117,18 +122,32 @@ html {
   }
 }
 
+* {
+  backface-visibility: hidden;/* animation時のにじみ防止 */
+	-webkit-backface-visibility: hidden;/* animation時のにじみ防止 */
+	-webkit-font-smoothing: antialiased;/* animation時の文字にじみ防止 */
+	-moz-osx-font-smoothing: grayscale;/* animation時の文字にじみ防止 */
+}
+
 /*********************************
 
 @splide/react-splide
 
 *********************************/
 .splide__arrow {
-  width: 3rem;
-  height: 3rem;
-  background: var(--color-pf-slider-ui);
+  width: 3.5rem;
+  height: 3.5rem;
+  background: var(--color-pf-text);
+  opacity: .7;
+  transform-origin: center center;
+  transition: transform .25s ease;
 }
 .splide__arrow > svg {
   fill: var(--color-pf-bg);
+}
+.splide__arrow:hover:not(:disabled) {
+    opacity: .7;
+    transform: translateY(-50%) scale(1.25);
 }
 .splide__track {
   padding-top: 16px;

@@ -53,17 +53,23 @@ export default function Page() {
                 日々 成長のため努力しています。</p>
               <p>現在は、pythonデータ分析実践試験の資格取得に向けて学習中です。</p>
             </div>
-            <div className='flex'>
-              <button className='relative cursor-pointer text-center align-middle
-                font-bold leading-normal tracking-widest
-                no-underline
-                px-8 py-6 ml-auto
-                rounded-[100%_80px/80px_100%] transition-all duration-300
-                bg-[linear-gradient(135deg,#fca1a1_40%,#fcfc5d_100%)]
-                shadow-[30px_10px_0_#fefeb3]
-                hover:rounded-[60%_80%/100%_80%]'>
-                view more
-              </button>
+            <div className='flex justify-end'>
+              <Link href="./about">
+                <button
+                  className="
+                              relative cursor-pointer text-center align-middle
+                              shadow-2xl rounded-full
+                              font-bold leading-normal tracking-widest
+                              px-8 py-6 ml-auto
+                              text-pf-text dark:text-pf-text-dark
+                              transition-transform duration-300 ease-in-out
+                              hover:scale-105 hover:shadow-xl
+                              active:scale-95 active:shadow-xl
+                            "
+                >
+                  view more
+                </button>
+              </Link>
             </div>
           </div>
           <div></div>

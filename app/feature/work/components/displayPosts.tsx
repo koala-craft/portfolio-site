@@ -41,7 +41,7 @@ const DisplayPosts = ({ allWorks }: WorkListProps) => {
     <div className="min-w-full h-full flex justify-center overflow-x-hidden overflow-y-visible py-8">
       <div className="max-w-6xl h-full">
         <Splide
-          className="h-[424px] w-[820px] splide-work"
+          className="h-[440px] w-[820px] splide-work"
           aria-label="works-list"
           options={{
             mediaQuery: 'min',
@@ -66,12 +66,12 @@ const DisplayPosts = ({ allWorks }: WorkListProps) => {
             .map((post) => (
               <SplideSlide key={post.slug}>
                 <Link
-                  className="w-full h-[424px] flex flex-col space-y-1 mb-4 border-none"
+                  className="h-[424px] flex flex-col mb-4"
                   href={`/work/${post.slug}`}
                 >
-                  <article className="w-full h-full rounded-[5px] overflow-hidden shadow-xl/30 shadow-pf-text group">
-                    <div className="w-full h-full relative">
-                      <div className="absolute bottom-0 left-0 z-20 h-14 w-full bg-pf-works-line px-6 flex items-center justify-between">
+                  <article className="h-full shadow-xl/30 shadow-pf-text group z-0">
+                    <div className="w-full h-full relative overflow-hidden rounded-2 box-border">
+                      <div className="absolute bottom-0 left-0 z-20 h-14 border-pf-works-line w-full bg-pf-works-line px-6 flex items-center justify-between">
                         <div className="flex items-center gap-3 h-full">
                           <FaReact className="fill-[#30C7EC] w-8 h-8" />
                           <SiNextdotjs className="fill-[#FFF] w-8 h-8" />

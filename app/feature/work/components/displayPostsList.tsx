@@ -66,7 +66,7 @@ const DisplayPostsList = ({ allWorks }: WorkListProps) => {
                   href={`/work/${post.slug}`}
                   key={post.slug}
                 >
-                  <article className="border border-transparent rounded-[5px] overflow-hidden  shadow-xl/30 shadow-pf-text transition-transform hover:-translate-y-4 duration-500">
+                  <article className="rounded-[5px] overflow-hidden  shadow-xl/30 shadow-pf-text transition-transform hover:-translate-y-4 duration-500">
                     <div className="h-40">
                       <img className="w-full h-full" src={post.metadata.image} alt="" />
                     </div>

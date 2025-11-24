@@ -2,7 +2,7 @@ import Link from 'next/link'
 import DarkModeToggle from './darkModeToggle'
 
 const navItems = {
-  '/': {
+  '/about': {
     name: 'About',
   },
   '/work': {
@@ -21,7 +21,7 @@ export function Navbar() {
         "flex flex-row justify-between items-center",
         "relative md:relative",
         "h-14 pl-10 pr-12 pb-0",
-        "border-b border-pf-ui-border")}
+        "border-b border-pf-ui-border dark:border-pf-ui-border-dark")}
       id="nav"
     >
       <Link href="/">
