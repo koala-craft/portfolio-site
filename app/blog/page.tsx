@@ -1,4 +1,4 @@
-import { BlogPostsList } from 'app/feature/blog/components/postsList'
+import { BlogPostsList } from 'features/blog/components/postsList'
 
 export const metadata = {
   title: 'ブログ一覧 -木乃宮 ダイ-',
