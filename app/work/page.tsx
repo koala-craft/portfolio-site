@@ -1,4 +1,4 @@
-import { WorkPostsList } from 'features/work/components/postsList'
+import { WorkPostsList } from 'features/routes/work/components/postsList'
 
 export const metadata = {
   title: '制作物一覧 -木乃宮 ダイ-',

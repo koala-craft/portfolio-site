@@ -1,4 +1,4 @@
-import { BlogPosts } from 'features/blog/components/posts'
+import { BlogPosts } from 'features/routes/blog/components/posts'
 import { FaGithub } from "react-icons/fa";
 import { SiZenn } from "react-icons/si";
 import Mylogo from '../components/icons/undraw-man-light'
@@ -7,7 +7,7 @@ import { UndrawDevAvatarIcon } from '../components/icons';
 
 import Link from 'next/link';
 import SkillList from '../components/skillList';
-import { WorkPosts } from '../features/work/components/posts';
+import { WorkPosts } from '../features/routes/work/components/posts';
 
 export default function Page() {
 
