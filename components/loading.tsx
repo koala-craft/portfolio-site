@@ -3,7 +3,7 @@ const Loading = () => {
   const text = "Loading...";
   return (
     <>
-      <div className="h-full min-h-[820px] w-full flex items-center justify-center flex-col gap-4">
+      <div className="h-full w-full flex items-center justify-center flex-col gap-4">
         <div className="w-10 h-10 relative mx-auto my-24">
           {[...Array(12)].map((_, i) => (
             <div
