@@ -8,7 +8,7 @@ image: '/images/blog/cool_dragon04.png'
 
 useMemoとは？
 
-React の フック の一つで、計算コストの高い処理を 不要な再計算から守るために結果をキャッシュ するために使用する。
+React の フック の一つで計算コストの高い処理の結果をキャッシュし、再利用するために使用する。（何度も同じ処理回さない）
 
 ```
 const sortedBlogs = useMemo(() => {
