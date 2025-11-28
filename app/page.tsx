@@ -3,13 +3,17 @@ import { SiZenn } from "react-icons/si";
 import Mylogo from '../components/icons/undraw-man-light'
 import { cx } from './utils/classnames';
 import { UndrawDevAvatarIcon } from '../components/icons';
+import dynamic from 'next/dynamic';
 
 import Link from 'next/link';
 import SkillList from '../components/skillList';
-import DisplayBlogs from '../features/routes/blog/components/displayPosts';
-import DisplayWorks from '../features/routes/work/components/displayPosts';
 import { getWorkPosts } from '../features/routes/work/utils/utils';
 import { getBlogPosts } from "../features/routes/blog/utils/utils";
+import Loading from "components/loading";
+
+const DisplayBlogs = dynamic(() => import('../features/routes/blog/components/displayPosts'), { loading: () => <Loading /> });
+const DisplayWorks = dynamic(() => import('../features/routes/work/components/displayPosts'), { loading: () => <Loading /> });
+
 
 export default function Page() {
   const blogs = getBlogPosts();

@@ -2,20 +2,11 @@
 
 import Link from "next/link"
 
-import dynamic from "next/dynamic";
 import React from "react";
 import Loading from "components/loading";
 
 // ssr: false でサーバーではレンダリングされない
-const Splide = dynamic(() => import("@splidejs/react-splide").then(mod => mod.Splide), {
-  ssr: false,
-  loading: () => <Loading />, // 読み込み中に表示
-});
-
-const SplideSlide = dynamic(
-  () => import("@splidejs/react-splide").then(mod => mod.SplideSlide),
-  { ssr: false }
-);
+import { Splide, SplideSlide } from '@splidejs/react-splide';
 
 type BlogListProps = {
   allBlogs: AllBlogs[]
