@@ -23,7 +23,7 @@ export default function Page() {
       <section className='min-h-screen flex flex-col justify-around'>
         <div className={cx("flex items-center justify-center", "h-full min-h-full min-w-4xl")}>
           <div>
-            <p className='mb-2'>はじめまして、私</p>Todo：{/**「私は」に戻す**/}
+            <p className='mb-2'>はじめまして、私は</p>
             <h1 className='text-5xl mb-3 font-bold'>Kinomiya Dai (木乃宮 ダイ)</h1>
             <p className='text-2xl mb-8'>Front / Back end Engineer</p>
             <p className='mb-3'>Webアプリの設計と実装に取り組んでいます。<br />UI から API まで、使いやすさと拡張性を意識した開発。<br />チームとのコミュニケーションを大切にし、<br />円滑に協力し合える環境づくりを心がけています。</p>
