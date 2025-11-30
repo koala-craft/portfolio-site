@@ -1,15 +1,15 @@
 import { FaGithub } from "react-icons/fa";
 import { SiZenn } from "react-icons/si";
-import Mylogo from '../components/icons/undraw-man-light'
+import Mylogo from '../features/common/components/icons/undraw-man-light'
 import { cx } from './utils/classnames';
-import { UndrawDevAvatarIcon } from '../components/icons';
+import { UndrawDevAvatarIcon } from '../features/common/components/icons';
 import dynamic from 'next/dynamic';
 
 import Link from 'next/link';
-import SkillList from '../components/skillList';
+import SkillList from '../features/common/components/skillList';
 import { getWorkPosts } from '../features/routes/work/utils/utils';
 import { getBlogPosts } from "../features/routes/blog/utils/utils";
-import Loading from "components/loading";
+import Loading from "features/common/components/loading";
 
 const DisplayBlogs = dynamic(() => import('../features/routes/blog/components/displayPosts'), { loading: () => <Loading /> });
 const DisplayWorks = dynamic(() => import('../features/routes/work/components/displayPosts'), { loading: () => <Loading /> });
@@ -21,7 +21,7 @@ export default function Page() {
   return (
     <>
       <section className='min-h-screen flex flex-col justify-around'>
-        <div className={cx("flex items-center justify-center", "h-full min-h-full min-w-4xl")}>
+        <div className={cx("flex items-center justify-center", "h-full min-h-full min-w-3xs md:min-w-2xl lg:min-w-4xl")}>
           <div>
             <p className='mb-2'>はじめまして、私は</p>
             <h1 className='text-5xl mb-3 font-bold'>Kinomiya Dai (木乃宮 ダイ)</h1>

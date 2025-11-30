@@ -4,7 +4,7 @@ import Link from "next/link"
 import ReactPaginate from 'react-paginate';
 import { AnimatePresence, motion } from "framer-motion";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
-import { UndrawProductDemo } from "components/icons";
+import { UndrawProductDemo } from "features/common/components/icons";
 import { usePagination } from "../hooks/usePagination";
 import { useCurrentItems } from "../hooks/useCurrentItems";
 

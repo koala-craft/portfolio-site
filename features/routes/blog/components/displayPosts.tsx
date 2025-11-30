@@ -3,7 +3,7 @@
 import Link from "next/link"
 
 import React from "react";
-import Loading from "components/loading";
+import Loading from "features/common/components/loading";
 
 // ssr: false でサーバーではレンダリングされない
 import { Splide, SplideSlide } from '@splidejs/react-splide';

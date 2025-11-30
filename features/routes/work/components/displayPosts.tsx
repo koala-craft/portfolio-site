@@ -4,7 +4,7 @@ import Link from "next/link"
 
 import { FaReact } from "react-icons/fa";
 import { SiNextdotjs } from "react-icons/si";
-import Loading from "components/loading";
+import Loading from "features/common/components/loading";
 
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 

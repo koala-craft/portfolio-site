@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation'
-import { CustomMDX } from 'components/mdx'
+import { CustomMDX } from 'features/common/components/mdx'
 import { formatDate, getBlogPosts } from 'features/routes/blog/utils/utils'
 import { baseUrl } from 'app/sitemap'
 import { FaRegClock } from 'react-icons/fa'

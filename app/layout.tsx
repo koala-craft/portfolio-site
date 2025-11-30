@@ -1,10 +1,10 @@
 import '@splidejs/react-splide/css'
 import './global.css'
 import type { Metadata } from 'next'
-import { Navbar } from '../components/nav'
+import { Navbar } from '../features/common/components/nav'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/react'
-import Footer from '../components/footer'
+import Footer from '../features/common/components/footer'
 import { baseUrl } from './sitemap'
 import { cx } from './utils/classnames'
 import { ThemeProvider } from 'next-themes'
@@ -59,10 +59,11 @@ export default function RootLayout({
       suppressHydrationWarning
       className={cx(
         'box-border text-pf-text bg-pf-bg dark:text-pf-text-dark dark:bg-pf-bg-dark transition-colors duration-800 ease-in-out',
-        '[&_ *]:duration-initial',
+        '[&_ *]:duration-initial w-full',
       )}
     >
-      <body className={clsx("antialiased lg:mx-auto", noto.className)}>
+      <body className={clsx("antialiased lg:mx-auto w-full relative",
+        noto.className)}>
         <ThemeProvider
           defaultTheme="system"
           enableSystem={true}>
