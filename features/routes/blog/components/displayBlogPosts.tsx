@@ -5,7 +5,6 @@ import Link from "next/link"
 import React from "react";
 import Loading from "features/common/components/loading";
 
-// ssr: false でサーバーではレンダリングされない
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 
 type BlogListProps = {
@@ -25,10 +24,12 @@ type Metadata = {
   image?: string
 }
 
-const DisplayPosts = ({ allBlogs }: BlogListProps) => {
+const DisplayBlogPosts = ({ allBlogs }: BlogListProps) => {
   return (
-    <div className="min-w-full h-[418px] flex justify-center overflow-x-hidden overflow-y-visible py-8">
-      <div className="max-w-6xl">
+    <div className="min-w-full h-[418px] flex justify-center overflow-x-hidden overflow-y-visible py-8
+                    pc:py-8
+                    ">
+      <div className="w-full px-12 pc:max-w-6xl">
         <Splide
           aria-label="blogs-list"
           options={{
@@ -40,10 +41,9 @@ const DisplayPosts = ({ allBlogs }: BlogListProps) => {
             speed: 1000,
             pauseOnFocus: false,
             gap: "1rem",
-            perPage: 4,
-            rewind: true,
+            perPage: 1,
             breakpoints: {
-              600: {
+              768: {
                 perPage: 2,
               },
               1025: {
@@ -62,7 +62,9 @@ const DisplayPosts = ({ allBlogs }: BlogListProps) => {
                 >
                   <article className="rounded-[5px] overflow-hidden shadow-xl/30 shadow-pf-text">
                     <div className="h-40">
-                      <img className="w-full h-full" src="/images/blog/cool_dragon04.jpg" alt="" />
+                      <img className="w-full h-full"
+                        src={`${post.metadata.image}`}
+                        alt={`${post.metadata.summary}のブログ画像`} />
                     </div>
                     <div className="relative h-40 flex flex-col md:flex-row space-x-0 px-4 py-3 text-pf-text bg-pf-bg">
                       <div className="flex flex-col">
@@ -90,4 +92,4 @@ const DisplayPosts = ({ allBlogs }: BlogListProps) => {
     </div>
   )
 }
-export default DisplayPosts
+export default DisplayBlogPosts

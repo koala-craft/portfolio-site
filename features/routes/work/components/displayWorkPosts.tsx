@@ -26,12 +26,12 @@ type Metadata = {
   image?: string
 }
 
-const DisplayPosts = ({ allWorks }: WorkListProps) => {
+const DisplayWorkPostsList = ({ allWorks }: WorkListProps) => {
   return (
-    <div className="min-w-full h-full flex justify-center overflow-x-hidden overflow-y-visible py-8">
-      <div className="max-w-6xl h-full">
+    <div className="w-full h-full flex justify-center overflow-x-hidden overflow-y-visible py-8">
+      <div className="w-full pc:max-w-6xl h-full">
         <Splide
-          className="h-[440px] w-[820px] splide-work"
+          className="w-full pc:h-[440px] pc:w-[820px] splide-work"
           aria-label="works-list"
           options={{
             mediaQuery: 'min',
@@ -54,7 +54,7 @@ const DisplayPosts = ({ allWorks }: WorkListProps) => {
                   className="h-[424px] flex flex-col mb-4"
                   href={`/work/${post.slug}`}
                 >
-                  <article className="h-full shadow-xl/30 shadow-pf-text group z-0">
+                  <article className="w-full h-full shadow-xl/30 shadow-pf-text group z-0">
                     <div className="w-full h-full relative overflow-hidden rounded-2 box-border">
                       <div className="absolute bottom-0 left-0 z-20 h-14 border-pf-works-line w-full bg-pf-works-line px-6 flex items-center justify-between">
                         <div className="flex items-center gap-3 h-full">
@@ -84,4 +84,4 @@ const DisplayPosts = ({ allWorks }: WorkListProps) => {
     </div>
   )
 }
-export default DisplayPosts
+export default DisplayWorkPostsList

@@ -3,7 +3,7 @@ import { CustomMDX } from 'features/common/components/mdx'
 import { formatDate, getWorkPosts } from 'features/routes/work/utils/utils'
 import { baseUrl } from 'app/sitemap'
 import { FaRegClock } from 'react-icons/fa'
-import DisplayPosts from 'features/routes/work/components/displayPosts'
+import DisplayPosts from 'features/routes/work/components/displayWorkPosts'
 
 export async function generateStaticParams() {
   let posts = getWorkPosts()

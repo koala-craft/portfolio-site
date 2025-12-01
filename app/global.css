@@ -43,8 +43,6 @@
   --color-pf-ui-border-dark: #474747;
   --color-pf-highlight-bg-dark: #0c0c0c;
 
-  --width-work-pc: 820px;
-
   /* responsive 独自ブレークポイント */
   --breakpoint-sp: 428px; /* sp */
   --breakpoint-tab: 768px; /* tablet */

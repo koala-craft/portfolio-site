@@ -1,4 +1,4 @@
-import DisplayPostsList from 'features/routes/blog/components/displayPostsList'
+import DisplayPostsList from 'features/routes/blog/components/displayBlogPostsList'
 import { getBlogPosts } from 'features/routes/blog/utils/utils'
 
 export const metadata = {

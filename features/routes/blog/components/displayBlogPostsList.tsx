@@ -4,7 +4,7 @@ import Link from "next/link"
 import ReactPaginate from 'react-paginate';
 import { AnimatePresence, motion } from "framer-motion";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
-import { UndrawBlogReport } from "features/common/components/svgs/icons";
+import { UndrawBlogReport } from "features/common/components/svgs";
 import { useCurrentItems } from "./hooks/useCurrentItems";
 import { usePagination } from "./hooks/usePagination";
 
@@ -27,7 +27,7 @@ type Metadata = {
 
 const itemsPerPage = 20;
 
-const DisplayPostsList = ({ allBlogs }: BlogListProps) => {
+const DisplayBlogPostsList = ({ allBlogs }: BlogListProps) => {
   const { currentPage, handlePageChange, startIndex } = usePagination(itemsPerPage)
   const currentItems = useCurrentItems(allBlogs, startIndex, itemsPerPage);
   return (
@@ -91,4 +91,4 @@ const DisplayPostsList = ({ allBlogs }: BlogListProps) => {
     </div>
   )
 }
-export default DisplayPostsList
+export default DisplayBlogPostsList

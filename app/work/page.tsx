@@ -1,4 +1,4 @@
-import DisplayPostList from 'features/routes/work/components/displayPostsList'
+import DisplayPostList from 'features/routes/work/components/displayWorkPostsList'
 import { getWorkPosts } from '../../features/routes/work/utils/utils';
 
 export const metadata = {
