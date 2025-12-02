@@ -9,7 +9,7 @@ export function DisplayBlog() {
   const blogs = getBlogPosts();
   return (
     <>
-      <section className='py-14 flex flex-col items-center gap-14'>
+      <section className='py-14 flex flex-col items-center gap-14 z-20'>
         <h2 className='text-4xl font-bold'>Blog</h2>
         <div className='w-full'>
           <DisplayBlogs allBlogs={blogs} />

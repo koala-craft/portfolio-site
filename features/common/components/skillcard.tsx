@@ -30,7 +30,12 @@ const SkillCard: React.FC<Props> = ({ skills, className }) => {
       {skills.map((skill, index) => (
         <div
           key={index}
-          className="flex flex-col items-center p-4 bg-pf-highlight-bg dark:bg-pf-highlight-bg-dark rounded-lg shadow hover:shadow-md transition "
+          className="flex flex-col items-center
+                     p-4 rounded-lg
+                     shadow
+                     transition hover:shadow-md
+                     bg-pf-highlight-bg
+                     dark:bg-pf-highlight-bg-dark  dark:border dark:border-pf-skill-card-border"
         >
           <div className="text-4xl mb-2">
             {React.isValidElement(skill.icon)

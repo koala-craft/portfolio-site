@@ -8,7 +8,7 @@ export function DisplayWork() {
   const works = getWorkPosts();
   return (
     <>
-      <section className='py-14 flex flex-col items-center gap-14 mb-16'>
+      <section className='py-14 flex flex-col items-center gap-14 mb-16 z-20'>
         <h2 className='text-4xl font-bold mb-10'>Works</h2>
         <DisplayWorks allWorks={works} />
         <div className='flex'>

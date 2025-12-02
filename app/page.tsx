@@ -3,6 +3,7 @@ import { DisplayAbout } from "features/routes/top/components/displayAbout";
 import { DisplayBlog } from "features/routes/top/components/displayBlog";
 import { DisplayWork } from 'features/routes/top/components/displayWork';
 import { DisplaySkill } from "features/routes/top/components/displaySkill";
+import { PgIconsBg } from "features/common/components/pgIconsBg";
 
 export default function Page() {
 
@@ -13,6 +14,7 @@ export default function Page() {
       <DisplayBlog />
       <DisplayWork />
       <DisplaySkill />
+      <PgIconsBg />
     </>
   )
 }

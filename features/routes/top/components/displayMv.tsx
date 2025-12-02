@@ -7,7 +7,7 @@ import Mylogo from '../../../common/components/svgs/undraw-man-light'
 export function DisplayMv() {
   return (
     <>
-      <section className='min-h-screen flex flex-col justify-around'>
+      <section className='min-h-screen flex flex-col justify-around z-20'>
         <div className="
                         h-full min-h-full px-6 mt-8
                         tab:min-w-2xl

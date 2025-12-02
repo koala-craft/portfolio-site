@@ -10,6 +10,7 @@ import { cx } from './utils/classnames'
 import { ThemeProvider } from 'next-themes'
 import { Noto_Sans_JP } from 'next/font/google'
 import clsx from 'clsx';
+import { PgIconsBg } from 'features/common/components/pgIconsBg'
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
@@ -68,7 +69,7 @@ export default function RootLayout({
           defaultTheme="system"
           enableSystem={true}>
           <Navbar />
-          <main className="flex-auto min-w-0 flex flex-col">
+          <main className="relative flex-auto min-w-0 flex flex-col">
             {children}
           </main>
           <Footer />

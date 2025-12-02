@@ -1,3 +1,4 @@
+import { PgIconsBg } from 'features/common/components/pgIconsBg';
 import DisplayPostsList from 'features/routes/blog/components/displayBlogPostsList'
 import { getBlogPosts } from 'features/routes/blog/utils/utils'
 
@@ -9,8 +10,12 @@ export const metadata = {
 export default function Page() {
   const allBlogs = getBlogPosts();
   return (
-    <section>
-      <DisplayPostsList allBlogs={allBlogs} />
-    </section>
+
+    <>
+      <section className='z-20'>
+        <DisplayPostsList allBlogs={allBlogs} />
+      </section>
+      <PgIconsBg />
+    </>
   )
 }

@@ -37,9 +37,10 @@
   --color-pf-slider-ui: #DA7E53;
   --color-pf-disabled-ui: #4c4c4c;
   --color-pf-works-line: #2F2F2F;
+  --color-pf-skill-card-border: #252525;
   /* dark設定 */
   --color-pf-text-dark: #CACACA;
-  --color-pf-bg-dark: #090814;
+  --color-pf-bg-dark: #000000;
   --color-pf-ui-border-dark: #272727;
   --color-pf-highlight-bg-dark: #0c0c0c;
 
@@ -85,9 +86,17 @@
       transform: translateY(10px);
     }
   }
-
   .animate-loading-5 {
     animation: loading-5 1s infinite;
+  }
+
+  @keyframes logo-spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+
+  .animate-logo-spin {
+    animation: logo-spin 10s linear infinite;
   }
 }
 
@@ -166,7 +175,7 @@ html {
 }
 .splide__track {
   padding-top: 16px;
-  overflow: visible;
+  overflow: visible !important;
 }
 
 .splide__slide {

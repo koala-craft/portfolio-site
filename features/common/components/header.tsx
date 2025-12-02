@@ -48,7 +48,7 @@ export function Navbar() {
   }, [scrollEvent]);
   return (
     <>
-      <header className={clsx('fixed h-14 w-full bg-pf-bg dark:bg-pf-bg-dark',
+      <header className={clsx('fixed h-14 w-full bg-pf-bg dark:bg-pf-bg-dark z-50',
         'transition-all duration-800',
         isHeaderShown ? `top-0 left-0 opacity-100` : `-top-14 opacity-0`
       )}>

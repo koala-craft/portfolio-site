@@ -4,7 +4,6 @@ import Link from "next/link"
 
 import { FaReact } from "react-icons/fa";
 import { SiNextdotjs } from "react-icons/si";
-import Loading from "features/common/components/loading";
 
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 
@@ -26,7 +25,7 @@ type Metadata = {
   image?: string
 }
 
-const DisplayWorkPostsList = ({ allWorks }: WorkListProps) => {
+const DisplayWorkPosts = ({ allWorks }: WorkListProps) => {
   return (
     <div className="w-full flex justify-center overflow-hidden">
       <div className="flex justify-center overflow-x-visible overflow-y-visible py-8 w-3/5">
@@ -82,4 +81,4 @@ const DisplayWorkPostsList = ({ allWorks }: WorkListProps) => {
     </div>
   )
 }
-export default DisplayWorkPostsList
+export default DisplayWorkPosts

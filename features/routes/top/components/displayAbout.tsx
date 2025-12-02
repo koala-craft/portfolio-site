@@ -5,7 +5,7 @@ export function DisplayAbout() {
   return (
     <>
       <section className='w-full py-14 px-6
-                          flex flex-col items-center gap-6 pc:px-0 pc:gap-14'>
+                          flex flex-col items-center gap-6 pc:px-0 pc:gap-14 z-20'>
         <h2 className='text-3xl font-semibold
                        pc:text-4xl pc:font-bold'>About me</h2>
         <div className='flex flex-col justify-center gap-6
