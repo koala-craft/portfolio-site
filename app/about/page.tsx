@@ -5,7 +5,7 @@ import { UndrawCommunication, UndrawDrinkCoffee, UndrawHello, UndrawHomeCinema, 
 export default function Page() {
   return (
     <>
-      <div className="z-20 px-8 sp:px-0">
+      <div className="z-20 px-8 sp:px-4 tab:px-0">
         <div className="min-w-full flex flex-col items-center justify-center">
           <h1 className="font-bold text-4xl my-8 tracking-normal">About Me</h1>
           <UndrawHello className="w-80 h-80 mb-4" />

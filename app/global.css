@@ -43,6 +43,7 @@
   --color-pf-bg-dark: #000000;
   --color-pf-ui-border-dark: #272727;
   --color-pf-highlight-bg-dark: #0c0c0c;
+  --color-pf-slider-ui-dark: #53b3da;
 
   /* responsive 独自ブレークポイント */
   --breakpoint-sp: 428px; /* sp */

@@ -34,7 +34,7 @@ const DisplayBlogPostsList = ({ allBlogs }: BlogListProps) => {
     <div className="min-w-full flex flex-col items-center justify-center">
       <h1 className="font-bold text-2xl my-8 tracking-normal">Blog List</h1>
       <UndrawBlogReport className="w-80 h-80 mb-4" />
-      <p className="mb-14">技術ブログチックに開発経験のナレッジを蓄積しています。</p>
+      <p className="mb-14 px-4 tab:px-0">技術ブログチックに開発経験のナレッジを蓄積しています。</p>
       <div>
         <AnimatePresence mode="wait">
           <motion.div
