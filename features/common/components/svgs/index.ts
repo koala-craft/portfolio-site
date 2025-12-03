@@ -15,3 +15,4 @@ export { default as UndrawHello } from "./undraw-hello";
 export { default as UndrawInTheZone } from "./undraw-in-the-zone";
 export { default as UndrawMailbox } from "./undraw-mailbox";
 export { default as UndrawProductDemo } from "./undraw-product-demo";
+export { default as UndrawNotfound } from "./undraw-notfound"
