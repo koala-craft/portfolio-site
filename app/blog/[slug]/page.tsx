@@ -101,7 +101,7 @@ export default async function Blog({ params }) {
         </div>
         <p className='mt-4 mb-8'>{post.metadata.summary}</p>
         <div className='h-[324px]'>
-          <img src={post.metadata.image} alt="" className='w-full h-full object-cover' />
+          <img src={post.metadata.image ? post.metadata.image : "/images/blog/image-not-found.jpg"} alt={`${post.metadata.summary}のブログ画像`} className='w-full h-full object-cover' />
         </div>
         <article className="prose">
           <CustomMDX source={post.content} />
