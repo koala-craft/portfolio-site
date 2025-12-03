@@ -46,6 +46,9 @@ const DisplayBlogPostsList = ({ allBlogs }: BlogListProps) => {
           >
             <div className="w-full px-8 px:px-0 pc:w-6xl grid grid-cols-1 sp-work:grid-cols-2 tab:grid-cols-3 pc:grid-cols-4 gap-8 transition-all duration-500">
               {currentItems
+                .sort(
+                  (a, b) => new Date(b.metadata.publishedAt).getTime() - new Date(a.metadata.publishedAt).getTime()
+                )
                 .map((post) => (
                   <Link
                     className="flex flex-col space-y-1 mb-4"
