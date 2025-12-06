@@ -2,8 +2,8 @@
 
 **Frontend / Backend Engineer – Kinomiya Dai**
 
-このポートフォリオは、スピード・デザイン・表現力にこだわった  
-エンジニアリングのショーケースです。
+このポートフォリオは、シンプルさと使いやすさを意識しつつ、
+自分の制作物や技術的な取り組みを整理してまとめたサイトです。
 
 ## 🌐 Live Demo  
 ### 🔗 **https://portfolio-site-qhcc.vercel.app/**
