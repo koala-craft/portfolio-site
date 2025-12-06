@@ -1,0 +1,76 @@
+---
+title: 'Githubの草が生えていない不具合の修正'
+publishedAt: '2025-12-06'
+summary: 'Githubの草が生えていなかったので生えるように修正しました。'
+---
+
+気づいていたのですが、ある程度ポートフォリオサイトも完成したということで、  
+Githubへのコミットの草が反映されていない問題を修正することにしました。
+
+
+## 症状
+
+ファーストコミット以降のコミットの草が反映されていない。
+
+■以下症状画像
+![Githubに草が生えない症状のスクショ画像](/images/blog/fix-github-glasses/bug.png)
+
+## 調査 
+
+以下の記事を見てみたところ、ローカルとGithubのメールアドレスに差異がある模様。
+
+[【git】初投稿！草が生えない原因…過去の草を取り戻せ！](https://zenn.dev/seetsuko/articles/4818a7168115a2)
+[[GitHub] 草が生えなくなった時の対処法](https://zenn.dev/cyaroya/articles/7e281e730791a1)
+
+コマンドを打ってみる
+
+```
+git config user.email
+```
+
+![コマンド実行後画像](/images/blog/fix-github-glasses/cause.png)
+
+<p className='text-2xl'>gmail.comの 「m」が抜けてる。。。</p>
+
+この後、user.nameも間違っていたことが判明したので、こちらも修正することになりました。
+
+## アカウント名とパスワードが違うものになっていた原因
+
+ - 趣味用gitアカウント
+ - 本gitアカウント
+
+の2アカウントの運用を試していた時があり、その時にユーザ名については設定がこんがらがっていた模様です。（emailはタイポでしたが。。。）
+
+今回は、個人ブランチで一人専用のブランチだったので修正可能でした。
+
+複数人での開発で同じことが起きたと思うと修正が難しいので、
+開発の開始時に、gitのユーザネーム、パスワードが間違っていないかはしっかり確認が必要だと感じました。
+
+## 早速修正
+
+```
+$ git config --global user.name "Kinomiya-Dai"
+$ git config --global user.email "fugahoge@mail.com"
+
+$ git filter-branch -f --env-filter 'GIT_AUTHOR_NAME="Kinomiya-Dai"; GIT_AUTHOR_EMAIL="fugahoge@gmail.com"; GIT_COMMITTER_NAME="Kinomiya-Dai"; GIT_COMMITTER_EMAIL="fugahoge@gmail.com"; export GIT_COMMITTER_DATE="$GIT_AUTHOR_DATE"' HEAD
+```
+
+以上のコードを実行
+
+1コミットあたりの処理に存外に時間がかかっていて、全体で体感5～10分ほどかかっていたと思います。
+
+最後に
+
+```
+git log
+```
+にて、正常に値が更新されているか確認。
+
+
+以下コードでリモートに反映
+```
+git push -f origin main
+```
+
+草が生えました。
+![修正後画像](/images/blog/fix-github-glasses/fixed.png)
