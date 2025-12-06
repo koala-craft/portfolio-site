@@ -15,16 +15,16 @@ import { SpNavButton } from 'features/common/components/spNavButton'
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: 'Kinomiya Dai | Front/Back end Engineer',
-    template: '%s | Next.js Portfolio Starter',
+    default: '木乃宮 ダイ | Front/Back end Engineer',
+    template: '%s | 木宮大ポートフォリオ',
   },
-  description: 'This is my portfolio.',
+  description: "木乃宮 ダイのポートフォリオサイトです。フロントエンド・バックエンド開発の制作実績や技術記事を掲載しています。",
   openGraph: {
-    title: 'My Portfolio',
-    description: 'This is my portfolio.',
+    title: '木乃宮 ダイ | ポートフォリオ',
+    description: 'フロントエンド／バックエンドエンジニア 木乃宮 ダイのポートフォリオサイト。',
     url: baseUrl,
-    siteName: 'My Portfolio',
-    locale: 'en_US',
+    siteName: '木乃宮 ダイ | ポートフォリオ',
+    locale: 'ja-JP',
     type: 'website',
   },
   robots: {
