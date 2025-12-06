@@ -42,6 +42,6 @@ export const tools = [
 ];
 export const certifications = [
   { name: "基本情報技術者", icon: <IpaLogo />, exp: true },
-  { name: "応用情報技術者", icon: <IpaLogo />, exp: false },
-  { name: "エンジニア認定データ分析実践", icon: <CpdaLogo />, exp: false },
+  { name: "応用情報技術者", icon: <IpaLogo />, exp: false, expExplain: "12月25日受験結果公開予定" },
+  { name: "エンジニア認定データ分析実践", icon: <CpdaLogo />, exp: false, expExplain: "12月20日受験予定" },
 ];

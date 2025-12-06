@@ -8,6 +8,7 @@ type Skill = {
   class?: string;
   description?: string;
   exp: boolean;
+  expExplain?: string;
 };
 
 type Props = {
@@ -55,7 +56,7 @@ const SkillCard: React.FC<Props> = ({ skills, className }) => {
                           absolute top-0 left-0 h-full w-full z-30
                         bg-pf-text/65
                         text-pf-bg">
-              取得予定
+              {skill.expExplain}
             </div>
           }
         </div>
