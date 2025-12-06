@@ -30,7 +30,6 @@ const DisplayWorkPosts = ({ allWorks }: WorkListProps) => {
     <div className="w-full flex justify-center overflow-hidden">
       <div className="flex justify-center overflow-x-visible overflow-y-visible py-8 w-4/5 tab:w-3/5">
         <Splide
-          aria-label="works-list"
           options={{
             mediaQuery: 'min',
             perMove: 1,

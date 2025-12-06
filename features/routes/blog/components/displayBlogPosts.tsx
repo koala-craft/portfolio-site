@@ -25,7 +25,6 @@ const DisplayBlogPosts = ({ allBlogs }: BlogListProps) => {
     <div className="flex justify-center overflow-hidden">
       <div className="overflow-x-visible overflow-y-visible py-8 w-4/5">
         <Splide
-          aria-label="blogs-list"
           options={{
             mediaQuery: 'min',
             perMove: 1,
