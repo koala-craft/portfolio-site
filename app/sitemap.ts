@@ -1,7 +1,7 @@
 import { getBlogPosts } from 'features/routes/blog/utils/utils'
 import { getWorkPosts } from 'features/routes/work/utils/utils'
 
-export const baseUrl = 'portfolio-site-kohl-five-24.vercel.app'
+export const baseUrl = 'https://portfolio-site-kohl-five-24.vercel.app/'
 
 export default async function sitemap() {
   let blogs = getBlogPosts().map((post) => ({
