@@ -62,7 +62,7 @@ const DisplayBlogPosts = ({ allBlogs }: BlogListProps) => {
                     className="flex flex-col space-y-1 mb-4"
                     href={`/blog/${post.slug}`}
                   >
-                    <article className="rounded-[5px] overflow-hidden shadow-xl/30 shadow-pf-text">
+                    <article className="rounded-[5px] overflow-hidden shadow-xl/10 shadow-pf-text">
                       <div>
                         <img className="w-full h-50 object-cover"
                           src={post.metadata.image ? post.metadata.image : "/images/blog/image-not-found.jpg"}
