@@ -19,9 +19,8 @@ export function DisplayAbout() {
               <p className='mb-4'>はじめまして。平成11年生まれ26歳エンジニアのダイと申します。<br />
                 社会人歴（IT業界）2年目となりました。
               </p>
-              <p className='mb-4'>もっとスキルアップしたい！
-                がっつり開発に携わりたいという思いを燃料に、
-                日々 成長のため努力しています。</p>
+              <p className='mb-4'>開発に真摯に向き合い、スキルを磨き続けたいという思いを大切にしながら、
+                                  日々の積み重ねを通じて成長していくことを心がけています。</p>
               <p>現在は、pythonデータ分析実践試験の資格取得に向けて学習中です。</p>
             </div>
             <div className='flex justify-center pc:justify-end'>
