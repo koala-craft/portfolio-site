@@ -34,7 +34,7 @@
 */
 @theme {
   /* light設定 */
-  --color-pf-text: #3D3D3D;
+  --color-pf-text: #1a1c1e;
   --color-pf-bg: #F5F5F5;
   --color-pf-ui-border: #DEDEDE;
   --color-pf-highlight-bg: #FAFDFF;
@@ -233,6 +233,10 @@ html {
   @tailwindcss/typography
 
 **********************************/
+.prose {
+  @apply leading-[1.8];
+}
+
 .prose .anchor {
   @apply absolute invisible no-underline;
 
@@ -313,6 +317,12 @@ html {
 
 .prose ol {
   @apply list-decimal pl-6;
+}
+.prose ul li{
+  @apply py-2;
+}
+.prose ol li{
+  @apply py-2;
 }
 
 .prose > :first-child {

@@ -1,4 +1,4 @@
-import { FaAws, FaCss3Alt, FaDatabase, FaDocker, FaGitAlt, FaGithub, FaHtml5, FaJava, FaJs, FaPython, FaReact } from "react-icons/fa";
+import { FaAws, FaCss3Alt, FaDatabase, FaDocker, FaGitAlt, FaGithub, FaHtml5, FaJava, FaJs, FaPython, FaReact, FaRust } from "react-icons/fa";
 import { SiFastapi, SiNextdotjs, SiPhp, SiSpring, SiTypescript } from "react-icons/si";
 
 import { IpaLogo } from "features/common/components/svgs/icons";
@@ -19,6 +19,7 @@ export const languages = [
   { name: "CSS", icon: <FaCss3Alt />, exp: true, class: "fill-[#086fc2]" },
   { name: "JavaScript", icon: <FaJs />, exp: true, class: "fill-[#f7e025]" },// Todo: 改造する
   { name: "TypeScript", icon: <SiTypescript />, exp: true, class: "fill-[#087ecd]" },
+  { name: "Rust", icon: <FaRust />, exp: true, class: "fill-[#262626]" },
   { name: "Python", icon: <FaPython />, exp: true, class: "fill-[#ffd107]" },// Todo: 改造する。
   { name: "PHP", icon: <SiPhp />, exp: true, class: "fill-[#8c96c0]" },
   { name: "SQL", icon: <FaDatabase />, exp: true, class: "fill-pf-text" },
@@ -29,7 +30,7 @@ export const frameworks = [
   { name: "React", icon: <FaReact />, exp: true, class: "fill-[#30C7EC] will-change-[filter] transition-[filter] animate-logo-spin duration-300 filter" },// Todo: 改造する
   { name: "Next.js", icon: <SiNextdotjs />, exp: true, class: "fill-[#000] dark:fill-[#FFF]" },
   { name: "SpringBoot", icon: <SiSpring />, exp: true, class: "fill-[#88db53]" },// Todo: 色が変わらない→改造する
-  { name: "FastAPI", icon: <SiFastapi />, exp: true, class: "fill-[#009385]" },// Todo：色が変わらない→改造する
+  // { name: "FastAPI", icon: <SiFastapi />, exp: true, class: "fill-[#009385]" },// Todo：色が変わらない→改造する
 ];
 
 export const tools = [
