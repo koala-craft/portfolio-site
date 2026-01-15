@@ -27,7 +27,7 @@ export function DisplayAbout() {
               </p>
               <p className='mb-4'>開発に真摯に向き合い、スキルを磨き続けたいという思いを大切にしながら、
                 日々の積み重ねを通じて成長していくことを心がけています。</p>
-              <p>現在は、pythonデータ分析実践試験の資格取得に向けて学習中です。</p>
+              <p>現在は、AWS SAA試験に向け勉強を進めています。</p>
             </div>
             <div className='flex justify-center pc:justify-end'>
               <Link href="./about">
