@@ -33,6 +33,9 @@ export function DisplayMv() {
               <a href="https://github.com/koara-craft" target="_blank" rel="noopener noreferrer">
                 <FaGithub className='w-8 h-8 cursor-pointer' />
               </a>
+              <a href="https://zenn.dev/koara_craft" target="_blank" rel="noopener noreferrer">
+                <SiZenn className='w-8 h-8 cursor-pointer' />
+              </a>
             </div>
           </div>
           <div className="hidden tab:block">
