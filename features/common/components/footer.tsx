@@ -19,7 +19,7 @@ export default function Footer() {
   return (
     <footer className="relative h-32 mb-6">
       <p className="absolute bottom-0 text-[14px] w-full text-center">
-        © {new Date().getFullYear()} Kinomiya Dai
+        © {new Date().getFullYear()} koala.craft
       </p>
     </footer>
   )

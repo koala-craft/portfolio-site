@@ -15,15 +15,15 @@ import { SpNavButton } from 'features/common/components/spNavButton'
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: '木乃宮 ダイ | フロントエンド/バックエンドエンジニア',
-    template: '%s | 木宮大ポートフォリオ',
+    default: 'コアラ工房 | フロントエンド/バックエンドエンジニア',
+    template: '%s | コアラ工房ポートフォリオ',
   },
-  description: "木乃宮 ダイのポートフォリオサイトです。フロントエンド・バックエンド開発の制作実績や技術記事を掲載しています。",
+  description: "コアラ工房のポートフォリオサイトです。フロントエンド・バックエンド開発の制作実績や技術記事を掲載しています。",
   openGraph: {
-    title: '木乃宮 ダイ | ポートフォリオ',
-    description: 'フロントエンド／バックエンドエンジニア 木乃宮 ダイのポートフォリオサイト。',
+    title: 'コアラ工房 | ポートフォリオ',
+    description: 'フロントエンド／バックエンドエンジニア コアラ工房のポートフォリオサイト。',
     url: baseUrl,
-    siteName: '木乃宮 ダイ | ポートフォリオ',
+    siteName: 'コアラ工房 | ポートフォリオ',
     locale: 'ja-JP',
     type: 'website',
   },

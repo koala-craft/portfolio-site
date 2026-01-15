@@ -2,7 +2,7 @@ import DisplayWorkPostList from 'features/routes/work/components/displayWorkPost
 import { getWorkPosts } from '../../features/routes/work/utils/utils';
 
 export const metadata = {
-  title: '制作物一覧 -木乃宮 ダイ-',
+  title: '制作物一覧 -コアラ工房-',
   description: '制作物一覧ページ.',
 }
 

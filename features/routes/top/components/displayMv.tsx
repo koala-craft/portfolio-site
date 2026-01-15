@@ -19,7 +19,7 @@ export function DisplayMv() {
                            text-2xl font-semibold
                            pc:mb-3 pc:text-5xl pc:font-bold
                            '>
-              Kinomiya Dai (木乃宮 ダイ)
+              koala.craft (コアラ工房)
             </h1>
             <p className='
                           mb-8
@@ -30,7 +30,7 @@ export function DisplayMv() {
             </div>
             <p className='mb-3'>Webアプリの設計と実装に取り組んでいます。<br />使いやすさと拡張性を意識した開発。<br />チームとのコミュニケーションを大切にし、<br />円滑に協力し合える環境づくりを心がけています。</p>
             <div className='flex gap-6'>
-              <a href="https://github.com/Kinomiya-Dai" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/koara-craft" target="_blank" rel="noopener noreferrer">
                 <FaGithub className='w-8 h-8 cursor-pointer' />
               </a>
             </div>

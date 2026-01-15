@@ -50,10 +50,10 @@ git config user.email
 ## 早速修正
 
 ```
-$ git config --global user.name "Kinomiya-Dai"
+$ git config --global user.name "koara-craft"
 $ git config --global user.email "fugahoge@mail.com"
 
-$ git filter-branch -f --env-filter 'GIT_AUTHOR_NAME="Kinomiya-Dai"; GIT_AUTHOR_EMAIL="fugahoge@gmail.com"; GIT_COMMITTER_NAME="Kinomiya-Dai"; GIT_COMMITTER_EMAIL="fugahoge@gmail.com"; export GIT_COMMITTER_DATE="$GIT_AUTHOR_DATE"' HEAD
+$ git filter-branch -f --env-filter 'GIT_AUTHOR_NAME="koara-craft"; GIT_AUTHOR_EMAIL="fugahoge@gmail.com"; GIT_COMMITTER_NAME="koara-craft"; GIT_COMMITTER_EMAIL="fugahoge@gmail.com"; export GIT_COMMITTER_DATE="$GIT_AUTHOR_DATE"' HEAD
 ```
 
 以上のコードを実行

@@ -3,7 +3,7 @@ import DisplayPostsList from 'features/routes/blog/components/displayBlogPostsLi
 import { getBlogPosts } from 'features/routes/blog/utils/utils'
 
 export const metadata = {
-  title: 'ブログ一覧 -木乃宮 ダイ-',
+  title: 'ブログ一覧 -コアラ工房-',
   description: 'ブログ一覧ページ.',
 }
 
