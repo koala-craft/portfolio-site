@@ -13,9 +13,9 @@ export default function Page() {
         </div>
         <div className="w-full flex justify-center leading-8">
           <hr className="bg-pf-text/80" />
-          <div className="w-3xl">
+          <div className="w-3xl backdrop-blur-[5px] sm:px-3 ">
             <section className="mb-32">
-              <h2 className="text-center font-bold text-2xl my-8">Communication</h2>
+              <h2 className="text-center font-bold text-4xl my-8">Communication</h2>
               <div className="flex justify-center mb-8">
                 <UndrawCommunication className="w-60 h-60" />
               </div>
@@ -24,7 +24,7 @@ export default function Page() {
                 チームでの協力や円滑なコミュニケーションを通じて、個人の力だけでは成し得ない価値を提供できると信じています。</p>
             </section>
             <section className="mb-32">
-              <h2 className="text-center font-bold text-2xl my-8">Approach to Work</h2>
+              <h2 className="text-center font-bold text-4xl my-8">Approach to Work</h2>
               <div className="flex justify-center mb-8">
                 <UndrawInTheZone className="w-60 h-60" />
               </div>
@@ -32,7 +32,7 @@ export default function Page() {
               <p>仕事においてもこの姿勢を貫き、与えられたタスクやプロジェクトのすべてに全力で挑みます。たとえ困難な課題や慣れない技術に直面しても、粘り強く学び続け、最善の結果を出すことを常に意識しています。</p>
             </section>
             <section className="mb-32">
-              <h2 className="text-center font-bold text-2xl my-8">Life ＆ Work</h2>
+              <h2 className="text-center font-bold text-4xl my-8">Life ＆ Work</h2>
               <div className="flex justify-center mb-8">
                 <UndrawDrinkCoffee className="w-60 h-60" />
               </div>
@@ -42,7 +42,7 @@ export default function Page() {
               <p>常に学び続け、無駄を省き効率を上げ必要工数を抑える方法を模索し続けます。</p>
             </section>
             <section className="mb-32">
-              <h2 className="text-center font-bold text-2xl my-8">Future</h2>
+              <h2 className="text-center font-bold text-4xl my-8">Future</h2>
               <div className="flex justify-center mb-8">
                 <UndrawProfessor className="w-60 h-60" />
               </div>
@@ -54,7 +54,7 @@ export default function Page() {
               <p>フロントエンドからバックエンド、AI開発まで幅広く学び、ユーザーにとって魅力的で先進的な体験を生み出せるフルスタックエンジニアを目指します。情熱をもって挑戦し、業界の変化をチャンスに変えていきたいと考えています。</p>
             </section>
             <section className="mb-32">
-              <h2 className="text-center font-bold text-2xl my-8">Strategy</h2>
+              <h2 className="text-center font-bold text-4xl my-8">Strategy</h2>
               <div className="flex justify-center mb-8">
                 <UndrawStrategy className="w-60 h-60" />
               </div>
@@ -70,15 +70,15 @@ export default function Page() {
               <p>これらを踏まえとりあえず、将来の目標の第一歩として本ポートフォリオを作成したという経緯です。</p>
               <br />
               <p>この後は、作りたいものを一つずつ積み上げて作っていきたいと思います。</p>
-              <p>最近<a className="underline px-[0.4rem] text-blue-600" href="https://blog.craftz.dog/" target="_blank">InkDrop制作者さんの記事</a>に影響を受けプログラマ向けのエディタを作成したい欲が沸き上がってきています。</p>
-              <p>個人開発者として、何を大事にし、どの部分を切り捨てるか。といった経験を通した生々しい体験談は一人のエンジニアとして胸を熱くなりました。（おすすめです！）</p>
+              <p>最近<a className="underline px-[0.4rem] text-blue-600" href="https://blog.craftz.dog/" target="_blank">InkDrop制作者さんの記事</a>（おすすめです！）に影響を受けプログラマ向けのエディタを作成したい欲が沸き上がってきています。</p>
+              <p>個人開発者として、何を大事にし、どの部分を切り捨てるか。といった経験を通した生々しい体験談は一人のエンジニアとして胸が熱くなりました。</p>
               <br />
               <p>最近応用情報とPython資格が取れたので、1月末にAWS SAA、春にIPAの高度資格なんかも取りたいなと画策しています。</p>
               <br />
               <p>進捗があり次第、本ブログに掲載しますね。</p>
             </section>
             <section className="mb-32">
-              <h2 className="text-center font-bold text-2xl my-8">character</h2>
+              <h2 className="text-center font-bold text-4xl my-8">character</h2>
               <div className="flex justify-center mb-8">
                 <UndrawHomeCinema className="w-60 h-60" />
               </div>
@@ -94,7 +94,7 @@ export default function Page() {
                 <ul>
                   <li>・モダンフロントエンド：TanstackStart、Nuxt</li>
                   <li>・バックエンド技術：Python（LLM開発）→Django,Flask（FW）</li>
-                  <li>・静的サイト構築：Astro（githubページに作成したアプリサイト作ったり。。。）</li>
+                  <li>・静的サイト構築：Astro（githubページに作成したアプリの配布・wikiページ作ったり。。。）</li>
                   <li>・デスクトップ開発：Rust,Tauri,Electron</li>
                   <li>・スマホアプリ開発：ReactNative（デスクトップアプリの言語との親和性を考慮）</li>
                   <li>・生成AIツール：cursor(課金するか悩み中)、Claude、Devin</li>

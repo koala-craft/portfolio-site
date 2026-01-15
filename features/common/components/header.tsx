@@ -63,7 +63,7 @@ export function Navbar() {
         >
           <Link href="/" className='flex items-center'>
             <Image src="/favicon.svg" alt="サイトアイコン" width={24} height={24} />
-            <h1 className='px-2 font-bold leading-14'>Kinomiya Dai</h1>
+            <h1 className='px-2 font-bold leading-14'>コアラ工房</h1>
           </Link>
           <div className={cx("flex flex-row items-center justify-end")}>
             <ul className={cx("hidden flex-row items-center justify-start space-x-0 mr-8",

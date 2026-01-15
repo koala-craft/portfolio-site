@@ -1,4 +1,4 @@
-import { UndrawDevAvatarIcon } from "features/common/components/svgs";
+import Image from "next/image"
 import Link from "next/link";
 
 export function DisplayAbout() {
@@ -12,16 +12,21 @@ export function DisplayAbout() {
                         tab:flex-row tab:gap-[7px]'>
           <div className="w-full flex justify-center
                           tab:block tab:w-auto">
-            <UndrawDevAvatarIcon className='w-[150px] h-[150px]' />
+            <Image
+              src="/koala.png"  // 画像のパス
+              alt="アバター画像"  // 代替テキスト（必須）
+              width={150}  // 幅（必須）
+              height={150}  // 高さ（必須）
+              className="rounded-full"
+            />
           </div>
           <div className='pc:w-3/5 tab:flex tab:flex-col'>
             <div className='mb-12 tab:w-[468px] pc:w-auto pc:mb-8'>
-              <p className='mb-4'>はじめまして。平成11年生まれ26歳エンジニアのダイと申します。<br />
+              <p className='mb-4'>はじめまして。平成11年生まれ26歳エンジニアのコアラ工房と申します。<br />
                 社会人歴（IT業界）2年目となりました。
               </p>
-              <p className='mb-4'>もっとスキルアップしたい！
-                がっつり開発に携わりたいという思いを燃料に、
-                日々 成長のため努力しています。</p>
+              <p className='mb-4'>開発に真摯に向き合い、スキルを磨き続けたいという思いを大切にしながら、
+                日々の積み重ねを通じて成長していくことを心がけています。</p>
               <p>現在は、pythonデータ分析実践試験の資格取得に向けて学習中です。</p>
             </div>
             <div className='flex justify-center pc:justify-end'>

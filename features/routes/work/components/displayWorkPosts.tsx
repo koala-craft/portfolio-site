@@ -61,7 +61,7 @@ const DisplayWorkPosts = ({ allWorks }: WorkListProps) => {
                             <FaReact className="fill-[#30C7EC] w-8 h-8" />
                             <SiNextdotjs className="fill-[#FFF] w-8 h-8" />
                           </div>
-                          <p className="text-pf-bg text-[12px] font-light">木乃宮 ダイ</p>
+                          <p className="text-pf-bg text-[12px] font-light">koala.craft</p>
                         </div>
                         <div className="absolute px-14 py-14
                                       -top-12 -left-12 tab:px-18 tab:py-18 z-30 w-0 h-0 rounded-[30px] overflow-hidden

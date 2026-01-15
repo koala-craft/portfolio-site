@@ -1,6 +1,6 @@
 # 🚀 Portfolio Site  
 
-**Frontend / Backend Engineer – Kinomiya Dai**
+**Frontend / Backend Engineer – koala.craft**
 
 このポートフォリオは、シンプルさと使いやすさを意識しつつ、
 自分の制作物や技術的な取り組みを整理してまとめたサイトです。
@@ -24,7 +24,7 @@
 ## 📦 Deploy Status  
 Vercel によって自動デプロイ  
 <br>
-<img src="https://vercelbadge.vercel.app/api/Kinomiya-Dai/portfolio-site?style=for-the-badge" />
+<img src="https://vercelbadge.vercel.app/api/koara-craft/portfolio-site?style=for-the-badge" />
 
 ---
 
