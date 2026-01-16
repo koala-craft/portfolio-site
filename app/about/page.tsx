@@ -70,7 +70,7 @@ export default function Page() {
               <p>これらを踏まえとりあえず、将来の目標の第一歩として本ポートフォリオを作成したという経緯です。</p>
               <br />
               <p>この後は、作りたいものを一つずつ積み上げて作っていきたいと思います。</p>
-              <p>最近<a className="underline px-[0.4rem] text-blue-600" href="https://blog.craftz.dog/" target="_blank">InkDrop制作者さんの記事</a>（おすすめです！）に影響を受けプログラマ向けのエディタを作成したい欲が沸き上がってきています。</p>
+              <p>最近<a className="underline px-[0.4rem] text-blue-600" href="https://blog.craftz.dog/" target="_blank">InkDrop制作者さんの記事</a>（おすすめです！）に影響を受けプログラマ向けのテックノートアプリを作成したい欲が沸き上がってきています。</p>
               <p>個人開発者として、何を大事にし、どの部分を切り捨てるか。といった経験を通した生々しい体験談は一人のエンジニアとして胸が熱くなりました。</p>
               <br />
               <p>最近応用情報とPython資格が取れたので、1月末にAWS SAA、春にIPAの高度資格なんかも取りたいなと画策しています。</p>
