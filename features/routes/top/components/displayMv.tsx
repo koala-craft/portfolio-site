@@ -1,9 +1,8 @@
-import { cx } from "app/utils/classnames";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
 import { SiZenn } from "react-icons/si";
 import Mylogo from '../../../common/components/svgs/undraw-man-light'
-``
+
 export function DisplayMv() {
   return (
     <>

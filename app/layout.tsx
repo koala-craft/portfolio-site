@@ -6,7 +6,7 @@ import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/react'
 import Footer from '../features/common/components/footer'
 import { baseUrl } from './sitemap'
-import { cx } from './utils/classnames'
+import { cx } from 'features/common/utils/classnames'
 import { ThemeProvider } from 'next-themes'
 import { Noto_Sans_JP } from 'next/font/google'
 import clsx from 'clsx';
