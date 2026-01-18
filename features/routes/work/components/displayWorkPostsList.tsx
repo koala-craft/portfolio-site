@@ -5,8 +5,7 @@ import ReactPaginate from 'react-paginate';
 import { AnimatePresence, motion } from "framer-motion";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import { UndrawProductDemo } from "features/common/components/svgs";
-import { usePagination } from "../hooks/usePagination";
-import { useCurrentItems } from "../hooks/useCurrentItems";
+import { useCurrentItems, usePagination } from "features/common/hooks";
 
 const itemsPerPage = 20
 
