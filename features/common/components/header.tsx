@@ -16,7 +16,7 @@ const navItems = {
     name: 'Blog',
   },
 }
-const cx = (...classes) => classes.filter(Boolean).join(' ')
+const cx = (...classes: (string | boolean | undefined)[]) => classes.filter(Boolean).join(' ')
 
 export function Navbar() {
   const [isHeaderShown, setIsHeaderShown] = useState(true);
@@ -46,35 +46,42 @@ export function Navbar() {
       window.removeEventListener('scroll', scrollEvent);
     };
   }, [scrollEvent]);
+
   return (
     <>
-      <header className={clsx('fixed h-14 w-full bg-pf-bg dark:bg-pf-bg-dark z-50',
-        'transition-all duration-800',
-        isHeaderShown ? `top-0 left-0 opacity-100` : `-top-14 opacity-0`
+      <header className={clsx(
+        'fixed h-16 w-full z-50',
+        'glass border-b border-pf-ui-border/50 dark:border-pf-ui-border-dark/50',
+        'transition-all duration-300',
+        isHeaderShown ? 'top-0 left-0 opacity-100' : '-top-16 opacity-0'
       )}>
         <nav
-          className={cx(
-            "flex flex-row justify-between items-center",
-            "relative md:relative",
-            "pr-4 pl-3 pb-0",
-            "tab:pr-12 sm:pl-10",
-            "border-b border-pf-ui-border dark:border-pf-ui-border-dark")}
+          className="flex flex-row justify-between items-center h-full max-w-7xl mx-auto px-4 tab:px-8"
           id="nav"
         >
-          <Link href="/" className='flex items-center'>
-            <Image src="/favicon.svg" alt="サイトアイコン" width={24} height={24} />
-            <h1 className='px-2 font-bold leading-14'>コアラ工房</h1>
+          <Link href="/" className="flex items-center gap-3 group">
+            <div className="relative">
+              <div className="absolute inset-0 bg-pf-accent/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity" />
+              <Image src="/favicon.svg" alt="サイトアイコン" width={32} height={32} className="relative" />
+            </div>
+            <h1 className="font-bold text-lg text-pf-text dark:text-pf-text-dark group-hover:text-pf-accent dark:group-hover:text-pf-accent-dark transition-colors">
+              コアラ工房
+            </h1>
           </Link>
-          <div className={cx("flex flex-row items-center justify-end")}>
-            <ul className={cx("hidden flex-row items-center justify-start space-x-0 mr-8",
-              "tab:flex"
-            )}>
+          
+          <div className="flex flex-row items-center gap-2">
+            <ul className="hidden tab:flex items-center gap-1">
               {Object.entries(navItems).map(([path, { name }]) => {
                 return (
                   <li key={path}>
                     <Link
                       href={path}
-                      className={cx("h-full text-underline-animate transition-all hover:opacity-75 flex align-middle relative py-1 px-2 m-1",
+                      className={cx(
+                        "px-4 py-2 rounded-full text-sm font-medium",
+                        "text-pf-text dark:text-pf-text-dark",
+                        "hover:bg-pf-accent/10 dark:hover:bg-pf-accent-dark/10",
+                        "hover:text-pf-accent dark:hover:text-pf-accent-dark",
+                        "transition-all duration-200"
                       )}
                     >
                       {name}
@@ -83,13 +90,13 @@ export function Navbar() {
                 )
               })}
             </ul>
-            <DarkModeToggle />
-            <button className='hidden fixed w-8 h-8' />
+            <div className="ml-2">
+              <DarkModeToggle />
+            </div>
           </div>
-        </nav >
+        </nav>
       </header>
-      <div className='h-14'>
-      </div>
+      <div className="h-16" />
     </>
   )
 }
