@@ -15,19 +15,19 @@ export default function Footer() {
               Front / Back end Engineer
             </p>
           </div>
-          
+
           <div className="flex items-center gap-4">
-            <a 
-              href="https://github.com/koara-craft" 
-              target="_blank" 
+            <a
+              href="https://github.com/koala-craft"
+              target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-full text-pf-muted dark:text-pf-muted-dark hover:text-pf-accent dark:hover:text-pf-accent-dark hover:bg-pf-accent/10 dark:hover:bg-pf-accent-dark/10 transition-all"
             >
               <FaGithub className="w-5 h-5" />
             </a>
-            <a 
-              href="https://zenn.dev/koara_craft" 
-              target="_blank" 
+            <a
+              href="https://zenn.dev/koala_craft"
+              target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-full text-pf-muted dark:text-pf-muted-dark hover:text-pf-accent dark:hover:text-pf-accent-dark hover:bg-pf-accent/10 dark:hover:bg-pf-accent-dark/10 transition-all"
             >
@@ -35,7 +35,7 @@ export default function Footer() {
             </a>
           </div>
         </div>
-        
+
         <div className="mt-8 pt-8 border-t border-pf-ui-border/50 dark:border-pf-ui-border-dark/50">
           <p className="text-sm text-pf-muted dark:text-pf-muted-dark text-center">
             © {new Date().getFullYear()} koala.craft. All rights reserved.

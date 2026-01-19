@@ -47,7 +47,7 @@ export function Navbar() {
               コアラ工房
             </h1>
           </Link>
-          
+
           <div className="flex flex-row items-center gap-2">
             <ul className="hidden tab:flex items-center gap-1">
               {Object.entries(navItems).map(([path, { name }]) => {
@@ -126,14 +126,14 @@ export function Navbar() {
               </li>
             ))}
           </ul>
-          
+
           <div className="mt-8 pt-8 border-t border-pf-ui-border dark:border-pf-ui-border-dark">
             <p className="text-sm text-pf-muted dark:text-pf-muted-dark mb-4">
               Front / Back end Engineer
             </p>
             <div className="flex gap-4">
               <a
-                href="https://github.com/koara-craft"
+                href="https://github.com/koala-craft"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-pf-muted dark:text-pf-muted-dark hover:text-pf-accent dark:hover:text-pf-accent-dark transition-colors"
@@ -141,7 +141,7 @@ export function Navbar() {
                 GitHub
               </a>
               <a
-                href="https://zenn.dev/koara_craft"
+                href="https://zenn.dev/koala_craft"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-pf-muted dark:text-pf-muted-dark hover:text-pf-accent dark:hover:text-pf-accent-dark transition-colors"
