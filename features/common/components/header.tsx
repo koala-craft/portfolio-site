@@ -1,51 +1,15 @@
 "use client"
 import Link from 'next/link'
 import DarkModeToggle from './darkModeToggle'
-import { useCallback, useEffect, useState } from 'react'
 import clsx from 'clsx'
 import Image from 'next/image'
-
-const navItems = {
-  '/about': {
-    name: 'About',
-  },
-  '/work': {
-    name: 'Works',
-  },
-  '/blog': {
-    name: 'Blog',
-  },
-}
-const cx = (...classes) => classes.filter(Boolean).join(' ')
+import { cx } from 'features/common/utils/classnames'
+import { navItems } from 'features/common/constants/navItems'
+import { useHeaderVisibility } from 'features/common/hooks/useHeaderVisibility'
 
 export function Navbar() {
-  const [isHeaderShown, setIsHeaderShown] = useState(true);
-  const [lastPosition, setLastPosition] = useState(0);
-  const headerHeight = 80;
+  const isHeaderShown = useHeaderVisibility(80);
 
-  const scrollEvent = useCallback(() => {
-    const offset = window.pageYOffset;
-
-    if (offset > headerHeight) {
-      setIsHeaderShown(false);
-    } else {
-      setIsHeaderShown(true);
-    }
-
-    if (offset < lastPosition) {
-      setIsHeaderShown(true);
-    }
-
-    setLastPosition(offset);
-  }, [lastPosition]);
-
-  useEffect(() => {
-    window.addEventListener('scroll', scrollEvent);
-
-    return () => {
-      window.removeEventListener('scroll', scrollEvent);
-    };
-  }, [scrollEvent]);
   return (
     <>
       <header className={clsx('fixed h-14 w-full bg-pf-bg dark:bg-pf-bg-dark z-50',
