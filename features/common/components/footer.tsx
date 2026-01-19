@@ -1,26 +1,47 @@
-function ArrowIcon() {
-  return (
-    <svg
-      width="12"
-      height="12"
-      viewBox="0 0 12 12"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M2.07102 11.3494L0.963068 10.2415L9.2017 1.98864H2.83807L2.85227 0.454545H11.8438V9.46023H10.2955L10.3097 3.09659L2.07102 11.3494Z"
-        fill="currentColor"
-      />
-    </svg>
-  )
-}
+import Link from 'next/link'
+import { FaGithub } from 'react-icons/fa'
+import { SiZenn } from 'react-icons/si'
 
 export default function Footer() {
   return (
-    <footer className="relative h-32 mb-6">
-      <p className="absolute bottom-0 text-[14px] w-full text-center">
-        © {new Date().getFullYear()} koala.craft
-      </p>
+    <footer className="relative border-t border-pf-ui-border dark:border-pf-ui-border-dark">
+      <div className="max-w-7xl mx-auto px-6 py-12">
+        <div className="flex flex-col tab:flex-row items-center justify-between gap-6">
+          <div className="flex flex-col items-center tab:items-start gap-2">
+            <Link href="/" className="font-bold text-lg text-pf-text dark:text-pf-text-dark hover:text-pf-accent dark:hover:text-pf-accent-dark transition-colors">
+              コアラ工房
+            </Link>
+            <p className="text-sm text-pf-muted dark:text-pf-muted-dark">
+              Front / Back end Engineer
+            </p>
+          </div>
+          
+          <div className="flex items-center gap-4">
+            <a 
+              href="https://github.com/koara-craft" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="p-2 rounded-full text-pf-muted dark:text-pf-muted-dark hover:text-pf-accent dark:hover:text-pf-accent-dark hover:bg-pf-accent/10 dark:hover:bg-pf-accent-dark/10 transition-all"
+            >
+              <FaGithub className="w-5 h-5" />
+            </a>
+            <a 
+              href="https://zenn.dev/koara_craft" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="p-2 rounded-full text-pf-muted dark:text-pf-muted-dark hover:text-pf-accent dark:hover:text-pf-accent-dark hover:bg-pf-accent/10 dark:hover:bg-pf-accent-dark/10 transition-all"
+            >
+              <SiZenn className="w-5 h-5" />
+            </a>
+          </div>
+        </div>
+        
+        <div className="mt-8 pt-8 border-t border-pf-ui-border/50 dark:border-pf-ui-border-dark/50">
+          <p className="text-sm text-pf-muted dark:text-pf-muted-dark text-center">
+            © {new Date().getFullYear()} koala.craft. All rights reserved.
+          </p>
+        </div>
+      </div>
     </footer>
   )
 }

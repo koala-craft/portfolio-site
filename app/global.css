@@ -1,16 +1,15 @@
 @import 'tailwindcss';
 
-/* この設定でdark:が有効になる */
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 ::selection {
-  background-color: #47a3f3;
+  background-color: #6366f1;
   color: #fefefe;
 }
+
 @layer base {
   :root {
     --animate-scroll-down: scroll 2s infinite;
-    /* Syntax highlight */
     --sh-class: #2d5e9d;
     --sh-identifier: #354150;
     --sh-sign: #8996a3;
@@ -21,74 +20,88 @@
     --sh-property: #e25a1c;
     --sh-entity: #e25a1c;
   }
-   [data-theme="dark"] {
-      --sh-identifier: #b3b3b3;
+  [data-theme="dark"] {
+    --sh-identifier: #b3b3b3;
   }
 }
 
-/* tailwind.config.tsの設定項目値
-・色設定は--color-
-・font設定は--text-
-・
-として記述することで、bg-pf-textなどで使用できる。
-*/
 @theme {
-  /* light設定 */
-  --color-pf-text: #1a1c1e;
-  --color-pf-bg: #F5F5F5;
-  --color-pf-ui-border: #DEDEDE;
-  --color-pf-highlight-bg: #FAFDFF;
-  --color-pf-slider-ui: #DA7E53;
-  --color-pf-disabled-ui: #4c4c4c;
-  --color-pf-works-line: #2F2F2F;
-  --color-pf-skill-card-border: #252525;
-  /* dark設定 */
-  --color-pf-text-dark: #CACACA;
-  --color-pf-bg-dark: #000000;
-  --color-pf-ui-border-dark: #272727;
-  --color-pf-highlight-bg-dark: #0c0c0c;
-  --color-pf-slider-ui-dark: #53b3da;
+  --color-pf-text: #0f172a;
+  --color-pf-bg: #f8fafc;
+  --color-pf-ui-border: #e2e8f0;
+  --color-pf-highlight-bg: #ffffff;
+  --color-pf-slider-ui: #6366f1;
+  --color-pf-disabled-ui: #94a3b8;
+  --color-pf-works-line: #334155;
+  --color-pf-skill-card-border: #334155;
+  --color-pf-accent: #6366f1;
+  --color-pf-accent-light: #818cf8;
+  --color-pf-surface: #ffffff;
+  --color-pf-muted: #64748b;
 
-  /* responsive 独自ブレークポイント */
-  --breakpoint-sp: 428px; /* sp */
-  --breakpoint-tab: 768px; /* tablet */
-  --breakpoint-pc: 1024px; /* pc */
-  --breakpoint-mt: 1440px; /* monitor */
+  --color-pf-text-dark: #e2e8f0;
+  --color-pf-bg-dark: #0f172a;
+  --color-pf-ui-border-dark: #334155;
+  --color-pf-highlight-bg-dark: #1e293b;
+  --color-pf-slider-ui-dark: #818cf8;
+  --color-pf-accent-dark: #818cf8;
+  --color-pf-surface-dark: #1e293b;
+  --color-pf-muted-dark: #94a3b8;
 
-  --breakpoint-sp-work:520px;
-  --breakpoint-sp-blog:520px;
+  --breakpoint-sp: 428px;
+  --breakpoint-tab: 768px;
+  --breakpoint-pc: 1024px;
+  --breakpoint-mt: 1440px;
+  --breakpoint-sp-work: 520px;
+  --breakpoint-sp-blog: 520px;
 }
 
 @layer utilities {
-  /*************
-    widthに関するutilities
-    横幅制御
-  *************/
-
-  /*************
-    box-shadow
-  *************/
-  .dark .shadow-all {
-    box-shadow:0 2px 4px rgba(0,0,0,0.1),0 -2px 4px rgba(0,0,0,0.1),2px 0 4px rgba(0,0,0,0.1),-2px 0 4px rgba(0,0,0,0.1);
+  .glass {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
   }
-  /*************
-    動作制御
-  *************/
-  /* 親要件:relative */
+  
+  [data-theme="dark"] .glass {
+    background: rgba(15, 23, 42, 0.9);
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .shadow-glow {
+    box-shadow: 0 0 40px rgba(99, 102, 241, 0.15);
+  }
+
+  .dark .shadow-glow {
+    box-shadow: 0 0 40px rgba(129, 140, 248, 0.1);
+  }
+
+  .dark .shadow-all {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1), 0 -2px 4px rgba(0,0,0,0.1), 2px 0 4px rgba(0,0,0,0.1), -2px 0 4px rgba(0,0,0,0.1);
+  }
+
   .text-before-line {
     @apply before:content-[''] before:absolute before:left-0 before:top-0;
   }
-  /* 親要件：flex,relative */
+
   .text-after-line {
-    @apply after:content-[''] after:flex-1 after:h-px after:w-full after:ml-3 before:bg-pf-text before:w-1.5 before:h-full after:bg-[linear-gradient(to_right,rgba(61,61,61,1)_0%,rgba(61,61,61,0)_100%)];
+    @apply after:content-[''] after:flex-1 after:h-px after:w-full after:ml-3 before:bg-pf-accent before:w-1 before:h-full after:bg-gradient-to-r after:from-pf-accent/60 after:to-transparent;
   }
+
   .scrollbar-none::-webkit-scrollbar {
     display: none;
   }
 
   .animate-fadeCircle {
-    animation: fadeCircle 1.2s infinite ease-in-out
+    animation: fadeCircle 1.2s infinite ease-in-out;
   }
+
   @keyframes fadeCircle {
     0%, 39%, 100% { opacity: 0; }
     40% { opacity: 1; }
@@ -99,17 +112,36 @@
       transform: translateY(10px);
     }
   }
+
   .animate-loading-5 {
     animation: loading-5 1s infinite;
   }
 
   @keyframes logo-spin {
     from { transform: rotate(0deg); }
-    to   { transform: rotate(360deg); }
+    to { transform: rotate(360deg); }
   }
 
   .animate-logo-spin {
     animation: logo-spin 10s linear infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes slide-up {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.6s ease-out forwards;
   }
 }
 
@@ -117,25 +149,64 @@
   .scroll-down-animate {
     @apply relative pt-16 text-center;
   }
+
   .scroll-down-animate::before {
     content: "";
-    @apply absolute top-0 left-0 right-0 m-auto w-5 h-5 border-l-2 border-b-2 border-pf-text dark:text-pf-text-dark;
+    @apply absolute top-0 left-0 right-0 m-auto w-6 h-6 border-l-2 border-b-2 border-pf-accent dark:border-pf-accent-dark;
     animation: var(--animate-scroll-down);
   }
+
   .text-underline-animate {
     @apply transition-all duration-300;
-    background-image: linear-gradient(var(--color-pf-text), var(--color-pf-text));
+    background-image: linear-gradient(var(--color-pf-accent), var(--color-pf-accent));
     background-repeat: no-repeat;
     background-position: bottom right;
-    background-size: 0 1px;
+    background-size: 0 2px;
   }
+
   .text-underline-animate:hover {
     background-position: bottom left;
-    background-size: 100% 1px;
+    background-size: 100% 2px;
   }
+
   [data-theme="dark"] .text-underline-animate {
-  background-image: linear-gradient(var(--color-pf-text-dark), var(--color-pf-text-dark));
-}
+    background-image: linear-gradient(var(--color-pf-accent-dark), var(--color-pf-accent-dark));
+  }
+
+  .card-modern {
+    @apply bg-pf-surface dark:bg-pf-surface-dark rounded-2xl;
+    @apply border border-pf-ui-border dark:border-pf-ui-border-dark;
+    @apply transition-all duration-300 ease-out;
+    @apply hover:shadow-xl hover:-translate-y-1;
+  }
+
+  .btn-primary {
+    @apply px-8 py-4 rounded-full font-semibold;
+    @apply bg-gradient-to-r from-pf-accent to-purple-500;
+    @apply text-white shadow-lg;
+    @apply transition-all duration-300;
+    @apply hover:shadow-xl hover:scale-105;
+    @apply active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply px-8 py-4 rounded-full font-semibold;
+    @apply bg-pf-surface dark:bg-pf-surface-dark;
+    @apply text-pf-text dark:text-pf-text-dark;
+    @apply border-2 border-pf-accent dark:border-pf-accent-dark;
+    @apply transition-all duration-300;
+    @apply hover:bg-pf-accent hover:text-white dark:hover:bg-pf-accent-dark;
+    @apply active:scale-95;
+  }
+
+  .section-title {
+    @apply text-4xl md:text-5xl font-bold tracking-tight text-center;
+  }
+
+  .section-subtitle {
+    @apply text-lg text-pf-muted dark:text-pf-muted-dark text-center;
+    @apply max-w-2xl mx-auto;
+  }
 }
 
 html {
@@ -172,19 +243,23 @@ html {
 
 *********************************/
 .splide .splide__arrow {
-  width: 3.5rem;
-  height: 3.5rem;
-  background: var(--color-pf-text);
-  opacity: .7;
+  width: 3rem;
+  height: 3rem;
+  background: var(--color-pf-accent);
+  opacity: 0.9;
   transform-origin: center center;
-  transition: transform .25s ease;
+  transition: all 0.3s ease;
+  border-radius: 50%;
 }
+
 .splide .splide__arrow > svg {
-  fill: var(--color-pf-bg);
+  fill: white;
 }
+
 .splide .splide__arrow:hover:not(:disabled) {
-    opacity: .7;
-    transform: translateY(-50%) scale(1.25);
+  opacity: 1;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.4);
 }
 .splide .splide__track {
   padding-top: 16px;

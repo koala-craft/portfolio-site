@@ -3,54 +3,52 @@ import Link from "next/link";
 
 export function DisplayAbout() {
   return (
-    <>
-      <section className='w-full py-14 px-6
-                          flex flex-col items-center gap-6 pc:px-0 pc:gap-14 z-20'>
-        <h2 className='text-3xl font-semibold
-                       pc:text-4xl pc:font-bold'>About me</h2>
-        <div className='flex flex-col justify-center gap-6
-                        tab:flex-row tab:gap-[7px]'>
-          <div className="w-full flex justify-center
-                          tab:block tab:w-auto">
-            <Image
-              src="/koala.png"  // 画像のパス
-              alt="アバター画像"  // 代替テキスト（必須）
-              width={150}  // 幅（必須）
-              height={150}  // 高さ（必須）
-              className="rounded-full"
-            />
+    <section className="relative py-24 px-6 z-20">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="section-title mb-4">About Me</h2>
+          <p className="section-subtitle">エンジニアとしての私について</p>
+        </div>
+        
+        <div className="flex flex-col tab:flex-row items-center gap-12 tab:gap-16">
+          <div className="relative">
+            <div className="absolute inset-0 bg-gradient-to-br from-pf-accent to-purple-500 rounded-full blur-2xl opacity-20" />
+            <div className="relative">
+              <Image
+                src="/koala.png"
+                alt="アバター画像"
+                width={200}
+                height={200}
+                className="rounded-full border-4 border-pf-surface dark:border-pf-surface-dark shadow-2xl"
+              />
+            </div>
           </div>
-          <div className='pc:w-3/5 tab:flex tab:flex-col'>
-            <div className='mb-12 tab:w-[468px] pc:w-auto pc:mb-8'>
-              <p className='mb-4'>はじめまして。平成11年生まれ26歳エンジニアのコアラ工房と申します。<br />
+          
+          <div className="flex-1 max-w-2xl">
+            <div className="space-y-6 mb-10">
+              <p className="text-lg leading-relaxed text-pf-text/80 dark:text-pf-text-dark/80">
+                はじめまして。平成11年生まれ26歳エンジニアのコアラ工房と申します。
                 社会人歴（IT業界）2年目となりました。
               </p>
-              <p className='mb-4'>開発に真摯に向き合い、スキルを磨き続けたいという思いを大切にしながら、
-                日々の積み重ねを通じて成長していくことを心がけています。</p>
-              <p>現在は、AWS SAA試験に向け勉強を進めています。</p>
+              <p className="text-lg leading-relaxed text-pf-text/80 dark:text-pf-text-dark/80">
+                開発に真摯に向き合い、スキルを磨き続けたいという思いを大切にしながら、
+                日々の積み重ねを通じて成長していくことを心がけています。
+              </p>
+              <p className="text-lg leading-relaxed text-pf-text/80 dark:text-pf-text-dark/80">
+                現在は、AWS SAA試験に向け勉強を進めています。
+              </p>
             </div>
-            <div className='flex justify-center pc:justify-end'>
+            
+            <div className="flex justify-center tab:justify-start">
               <Link href="./about">
-                <button
-                  className="
-                              relative cursor-pointer text-center align-middle
-                              shadow-2xl rounded-full
-                              font-bold leading-normal tracking-widest
-                              px-8 py-6 ml-auto
-                              text-pf-text dark:text-pf-text-dark bg-pf-bg dark:bg-pf-bg-dark
-                              transition-transform duration-300 ease-in-out
-                              hover:scale-105 hover:shadow-xl dark:shadow-pf-text-dark/20 dark:border dark:border-pf-text-dark/10
-                              active:scale-95 active:shadow-xl dark:active:shadow-2xl dark:active:border-2
-                            "
-                >
-                  view more
+                <button className="btn-secondary">
+                  View More
                 </button>
               </Link>
             </div>
           </div>
-          <div></div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   )
 }
