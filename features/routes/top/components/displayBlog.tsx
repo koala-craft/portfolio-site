@@ -8,19 +8,23 @@ const DisplayBlogs = dynamic(() => import('../../blog/components/displayBlogPost
 export function DisplayBlog() {
   const blogs = getBlogPosts();
   return (
-    <>
-      <section className='py-14 flex flex-col items-center gap-14 z-20'>
-        <h2 className='text-4xl font-bold'>Blog</h2>
-        <div className='w-full'>
-          <DisplayBlogs allBlogs={blogs} />
-          <div className='flex justify-center w-full pt-6'>
-            <Link href="./blog">
-              <p className='text-2xl font-light border-b cursor-pointer'>View All Blogs</p>
-            </Link>
-          </div>
+    <section className="relative py-24 px-6 z-20">
+      <div className="relative max-w-7xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="section-title mb-4">Blog</h2>
+          <p className="section-subtitle">技術ブログを更新しています</p>
         </div>
-
-      </section>
-    </>
+        
+        <DisplayBlogs allBlogs={blogs} />
+        
+        <div className="flex justify-center mt-12">
+          <Link href="./blog">
+            <button className="btn-primary">
+              View All Blogs
+            </button>
+          </Link>
+        </div>
+      </div>
+    </section>
   )
 }
