@@ -1,55 +1,23 @@
 "use client"
 import Link from 'next/link'
 import { PiNavigationArrowFill } from 'react-icons/pi'
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useRef, useState } from 'react';
 import { usePathname } from "next/navigation";
 import clsx from 'clsx';
-
-const navItems = {
-  '/about': {
-    name: 'About',
-  },
-  '/work': {
-    name: 'Works',
-  },
-  '/blog': {
-    name: 'Blog',
-  },
-}
+import { navItems } from 'features/common/constants/navItems'
+import { useClickOutside } from 'features/common/hooks/useClickOutside'
 
 export function SpNavButton() {
   const [subNavShown, setSubNavShown] = useState<Boolean>(false);
   const nowPathName = usePathname();
   const linkListRef = useRef<HTMLUListElement>(null);
-  const excluedButtonRef = useRef<HTMLButtonElement>(null);
-  console.log(subNavShown)
+  const excludeButtonRef = useRef<HTMLButtonElement>(null);
 
-  useEffect(() => {
-    //対象の要素を取得
-    const tg = linkListRef.current;
+  const handleClickOutside = useCallback(() => {
+    setSubNavShown(false);
+  }, []);
 
-    //対象の要素がなければ何もしない
-    if (!tg) return;
-
-    //クリックした時に実行する関数
-    const hundleClickOutside = (e: MouseEvent) => {
-      if (!tg?.contains(e.target as Node)) {
-        // ボタン押下は何もしない。
-        if (excluedButtonRef.current?.contains(e.target as Node)) return;
-        //ここに外側をクリックしたときの処理
-        setSubNavShown(false);
-      }
-    };
-
-    //クリックイベントを設定
-    document.addEventListener("click", hundleClickOutside);
-
-    //クリーンアップ関数
-    return () => {
-      //コンポーネントがアンマウント、再レンダリングされたときにクリックイベントを削除
-      document.removeEventListener("click", hundleClickOutside);
-    };
-  }, [linkListRef]);
+  useClickOutside(linkListRef, excludeButtonRef, handleClickOutside);
 
   return (
     <>
@@ -62,7 +30,7 @@ export function SpNavButton() {
                              active:scale-95 active:translate-y-px active:shadow-md dark:shadow-pf-text-dark/10
                              transition:all duration-200 ease-in-out
                              '
-            ref={excluedButtonRef}
+            ref={excludeButtonRef}
             onClick={() => setSubNavShown(prev => !prev)}>
             <div className='flex w-full h-full items-center justify-center'>
               <PiNavigationArrowFill className='fill-pf-slider-ui w-5 h-5 dark:fill-pf-slider-ui-dark' />

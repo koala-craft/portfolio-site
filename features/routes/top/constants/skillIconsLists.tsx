@@ -1,8 +1,7 @@
 import { FaAws, FaCss3Alt, FaDatabase, FaDocker, FaGitAlt, FaGithub, FaHtml5, FaJava, FaJs, FaPython, FaReact, FaRust } from "react-icons/fa";
 import { SiFastapi, SiNextdotjs, SiPhp, SiSpring, SiTypescript } from "react-icons/si";
 
-import { IpaLogo } from "features/common/components/svgs/icons";
-import { CpdaLogo } from "features/common/components/svgs/icons";
+import { IpaLogo, CpdaLogo } from "features/common/components/svgs";
 import dynamic from "next/dynamic";
 
 const PiFigmaLogoFill = dynamic(
