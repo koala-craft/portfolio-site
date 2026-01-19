@@ -1,53 +1,17 @@
 "use client"
 import Link from 'next/link'
 import DarkModeToggle from './darkModeToggle'
-import { useCallback, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import clsx from 'clsx'
 import Image from 'next/image'
 import { HiOutlineMenu, HiOutlineX } from 'react-icons/hi'
-
-const navItems = {
-  '/about': {
-    name: 'About',
-  },
-  '/work': {
-    name: 'Works',
-  },
-  '/blog': {
-    name: 'Blog',
-  },
-}
-const cx = (...classes: (string | boolean | undefined)[]) => classes.filter(Boolean).join(' ')
+import { cx } from 'features/common/utils/classnames'
+import { navItems } from 'features/common/constants/navItems'
+import { useHeaderVisibility } from 'features/common/hooks/useHeaderVisibility'
 
 export function Navbar() {
-  const [isHeaderShown, setIsHeaderShown] = useState(true);
-  const [lastPosition, setLastPosition] = useState(0);
+  const isHeaderShown = useHeaderVisibility(80);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const headerHeight = 80;
-
-  const scrollEvent = useCallback(() => {
-    const offset = window.pageYOffset;
-
-    if (offset > headerHeight) {
-      setIsHeaderShown(false);
-    } else {
-      setIsHeaderShown(true);
-    }
-
-    if (offset < lastPosition) {
-      setIsHeaderShown(true);
-    }
-
-    setLastPosition(offset);
-  }, [lastPosition]);
-
-  useEffect(() => {
-    window.addEventListener('scroll', scrollEvent);
-
-    return () => {
-      window.removeEventListener('scroll', scrollEvent);
-    };
-  }, [scrollEvent]);
 
   useEffect(() => {
     if (isMobileMenuOpen) {
