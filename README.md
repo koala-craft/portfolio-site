@@ -24,7 +24,7 @@
 ## 📦 Deploy Status  
 Vercel によって自動デプロイ  
 <br>
-<img src="https://vercelbadge.vercel.app/api/koara-craft/portfolio-site?style=for-the-badge" />
+<img src="https://vercelbadge.vercel.app/api/koala-craft/portfolio-site?style=for-the-badge" />
 
 ---
 
