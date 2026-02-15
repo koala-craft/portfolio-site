@@ -11,6 +11,7 @@ import { ThemeProvider } from 'next-themes'
 import { Noto_Sans_JP } from 'next/font/google'
 import clsx from 'clsx';
 import { SpNavButton } from 'features/common/components/spNavButton'
+import { PortfolioV2Popup } from 'features/common/components/portfolioV2Popup'
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
@@ -74,6 +75,7 @@ export default function RootLayout({
           </main>
           <Footer />
           <SpNavButton />
+          <PortfolioV2Popup />
           <Analytics />
           <SpeedInsights />
         </ThemeProvider>
